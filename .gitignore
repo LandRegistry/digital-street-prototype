@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/git,osx,node,macos,linux,windows,jetbrains,sublimetext,visualstudio,visualstudiocode
+# Created by https://www.gitignore.io/api/git,osx,node,macos,linux,windows,jetbrains,sublimetext,visualstudio,visualstudiocode,sass
 
 ### Git ###
 *.orig
@@ -204,6 +204,12 @@ typings/
 # Files that might appear in the root of a volume
 
 # Directories potentially created on remote AFP share
+
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 
 ### SublimeText ###
 # Cache files for Sublime Text
@@ -416,7 +422,6 @@ nCrunchTemp_*
 AutoTest.Net/
 
 # Web workbench (sass)
-.sass-cache/
 
 # Installshield output folder
 [Ee]xpress/
@@ -601,4 +606,4 @@ ASALocalRun/
 .localhistory/
 
 
-# End of https://www.gitignore.io/api/git,osx,node,macos,linux,windows,jetbrains,sublimetext,visualstudio,visualstudiocode
+# End of https://www.gitignore.io/api/git,osx,node,macos,linux,windows,jetbrains,sublimetext,visualstudio,visualstudiocode,sass
