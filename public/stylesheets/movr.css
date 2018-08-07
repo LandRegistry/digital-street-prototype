@@ -1,0 +1,13 @@
+.navbar {
+  background-color: purple;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: lightgray;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibW92ci5jc3MiLCJzb3VyY2VzIjpbIm1vdnIuc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBwdXJwbGU7XG59XG5cbi5uYXZiYXItZGVmYXVsdCAubmF2YmFyLWJyYW5kIHtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cbi5uYXZiYXItZGVmYXVsdCAubmF2YmFyLWJyYW5kOmhvdmVyIHtcbiAgICBjb2xvcjogbGlnaHRncmF5O1xufSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxBQUFBLE9BQU8sQ0FBQztFQUNKLGdCQUFnQixFQUFFLE1BQU07Q0FDM0I7O0FBRUQsQUFBQSxlQUFlLENBQUMsYUFBYSxDQUFDO0VBQzFCLEtBQUssRUFBRSxLQUFLO0NBQ2Y7O0FBRUQsQUFBQSxlQUFlLENBQUMsYUFBYSxBQUFBLE1BQU0sQ0FBQztFQUNoQyxLQUFLLEVBQUUsU0FBUztDQUNuQiJ9 */

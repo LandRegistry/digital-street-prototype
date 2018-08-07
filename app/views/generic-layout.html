@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        {% block head %}
+            {% block styles %}
+                {% include "includes/generic-styles.html" %}
+                {% block pageStyles %}{% endblock %}
+            {% endblock %}
+            <title>
+                {% block pageTitle %}
+                    {{ title | safe }}     
+                {% endblock %}
+            </title>
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block header %}
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">{{ title | safe }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <div class="container">
+                {% block footer %}
+                {% endblock %}
+            </div>
+        </footer>
+
+        {% block bodyEnd %}
+            {% block scripts %}
+                {% include "includes/generic-scripts.html" %}
+            {% endblock %}
+            {% block pageScripts %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>
