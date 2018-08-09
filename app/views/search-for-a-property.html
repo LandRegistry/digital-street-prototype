@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Search for a property
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+    {% call govukFieldset({
+        legend: {
+            text: "Search for a property",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+        }
+    }) %}
+
+    {{ govukInput({
+        hint: {
+            text: "Enter a title number, postcode, address or proprietor"
+        },
+        classes: "govuk-input--width-20",
+        id: "postcode",
+        name: "postcode"
+    }) }}
+
+    {{ govukButton({
+        text: "Continue"
+    }) }}
+
+    {% endcall %}
+{% endblock %}
