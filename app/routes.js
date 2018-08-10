@@ -1,13 +1,22 @@
 const express = require('express')
 const router = express.Router()
+const glob = require('glob')
+const path = require('path')
 
-// Add your routes here - above the module.exports line
-router.get('/about', function(req, res) {
-    res.render('about')
+// Mount version specific routes
+glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
+    if(err) {
+        throw err
+    }
+    
+    files.forEach(function(file) {
+        const prototypeVersion = path.dirname(path.relative(path.join(__dirname, 'views/'), file));
+        
+        // Mount all routes exposed onto a path reflecting the prototype version
+        router.use('/' + prototypeVersion, require(file))
+        
+    })
 })
 
-router.get('/example', function(req, res) {
-    res.render('generic-example', { title: "movr" })
-})
 
 module.exports = router
