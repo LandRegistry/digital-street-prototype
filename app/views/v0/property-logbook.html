@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Property logbook
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }} -->
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">1 Digital Street,<br>
+                Bristol,<br>BS2 8EN</h1>
+            </h1>
+            <p class="govuk-body">
+                Current owner: <strong>Mrs Lisa White</strong><br><br>
+                Title number: <strong>DS1239B</strong><br><br>
+                Tenure type: <strong>Freehold</strong><br><br>
+                
+                <strong>Property description:</strong><br>
+                4 bedroom house with garden and private garage.
+            </p>
+
+            {{ govukTable({
+                caption: "Price history",
+                firstCellIsHeader: false,                
+                rows: [
+                  [
+                    {
+                      text: "£210,000"
+                    },
+                    {
+                      text: "Sold"
+                    },
+                    {
+                      text: "17 June 2017"
+                    }
+                  ],
+                  [
+                    {
+                      text: "£160,000"
+                    },
+                    {
+                      text: "Sold"
+                    },
+                    {
+                      text: "16 May 2006"
+                    }
+                  ],
+                  [
+                    {
+                      text: "£125,000"
+                    },
+                    {
+                      text: "Sold"
+                    },
+                    {
+                      text: "16 August 2001"
+                    }
+                  ]
+                ]
+              }) }}
+            
+            
+            <p class="govuk-body"><strong>You can't:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">    
+                <li>mine this land</li>
+                <li>build a factory</li>
+                <li>use this land for a business</li>
+                <li>build on the south side of the property</li>
+            </ul>                
+            <p class="govuk-body"><strong>Other people can use your land. The:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>local church can charge a regular maintenance fee</li>
+                <li>owners of 2 Digital Street can use the path at the back of their land but must contribute to its maintenance costs</li>
+                <li><a href="#">Avon Road's Commission</a> can access your garden to maintain the dual carriageway at the end of your property</li>
+            </ul>            
+            <p class="govuk-body"><strong>You can:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>use the path at the end of 2 Digital Street to access your property</li>
+            </ul>
+
+            {{ govukButton({
+                text: "Claim this property",
+                href: "identify-sign-in"
+              }) }}
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <div class="img-section">
+                <img src="/public/images/title-plan.jpg" alt="An image of the property's boundary">
+                <p class="govuk-body-s">Boundary of the property.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

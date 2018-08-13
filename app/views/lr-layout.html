@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        {% block head %}
+            {% include "includes/lr-styles.html" %}
+            {% block pageStyles %}{% endblock %}
+            <title>
+                {% block pageTitle %}
+                    {{ title | safe }}     
+                {% endblock %}
+            </title>
+        {% endblock %}
+    </head>
+
+    <body>
+        
+        {% block header %}
+            <header>                
+                <nav class="navbar navbar-default navbar-static-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">{% block pageBrand %}{% endblock %}</a>
+                    </div>
+                </nav>
+            </header>
+        {% endblock %}
+        
+        <div class="container">
+            {% block content %}
+            {% endblock %}  
+        </div>
+
+        {% block bodyEnd %}
+            {% include "includes/generic-scripts.html" %}
+            {% block pageScripts %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>

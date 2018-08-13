@@ -6,14 +6,15 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-    text: "Back"
+    text: "Back",
+    href: "start-page"    
   }) }}
 {% endblock %}
 
 {% block content %}
     {% call govukFieldset({
         legend: {
-            text: "Search for a property",
+            text: "Search the land register",
             classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
         }
@@ -30,7 +31,7 @@
 
     {{ govukButton({
         text: "Continue",
-        href: "#"
+        href: "seller-search-results"
     }) }}
 
     {% endcall %}

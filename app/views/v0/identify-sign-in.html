@@ -1,0 +1,36 @@
+{% extends "lr-layout.html" %}
+
+{% block pageTitle %}
+    Search for a property
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block pageBrand %}
+  <!-- Identify -->
+{% endblock %}
+
+{% block content %}
+  <section class="jumbotron">
+    <div class="container">
+        <h1>Sign in with Identify</h1>
+        <form>
+            <div class="form-check">
+                <input class="form-check-input radio-btn" type="radio" name="used-before" id="used-before-no" value="no" checked>
+                <label class="form-check-label" for="used-before-no">
+                    This is my first time using Identify
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio-btn" type="radio" name="used-before" id="used-before-yes" value="yes">
+                <label class="form-check-label" for="used-before-yes">
+                    I've used Identify before
+                </label>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="#">Continue</a>
+        </form>
+    </div>
+  </div>
+{% endblock %}

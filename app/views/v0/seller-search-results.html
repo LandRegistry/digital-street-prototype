@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Search results
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"    
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Search results for BS2 8EN</h1>
+      <p class="govuk-body">20 results found.</p>
+
+      <p><a href="property-logbook">1 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">2 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">3 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">4 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">5 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">6 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">7 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">8 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">9 Digital Street, Bristol, BS2 8EN</a></p>
+      <p><a href="property-logbook">10 Digital Street, Bristol, BS2 8EN</a></p>
+      <a class="button" href="#">Next Page</a>
+    </div>
+  </div>
+  
+{% endblock %}
+
