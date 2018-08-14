@@ -15,6 +15,8 @@ router.get('/property-logbook', function(req, res) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
         if (lastEndpoint == 'seller-land-registry-checks') {
             role = 'owner'
+        } else if (lastEndpoint == 'seller-upload-documents') {
+            role = 'seller'
         }
     }
     res.render(path.resolve(__dirname, './property-logbook.html'), { role: role })

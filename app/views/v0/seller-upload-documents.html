@@ -1,16 +1,70 @@
-{% extends "layout.html" %}
+{% extends "lr-layout.html" %}
 
 {% block pageTitle %}
-    Search for a property
+    Upload documents
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"    
-  }) }}
 {% endblock %}
 
 {% block content %}
+<h1>Upload documents</h1><br>
 
+<div class="row">
+  <div class="col-6">
+    <p>
+      If you answered 'yes' to some of your pre-contract questions - you can now upload
+      any supporting documents you may have.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <hr>
+    <div class="row">
+        <div class="col">
+          <p>
+            1. Planning Restrictions
+          </p>
+        </div>
+        <div class="col-1">
+          <i class="fas fa-file-upload fa-lg"></i>
+        </div>
+    </div>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+        <div class="col">
+          <p>
+            2. Restrictions on what your property can be used for
+          </p>
+        </div>
+        <div class="col-1">
+          <i class="fas fa-file-upload fa-lg"></i>
+        </div>
+    </div>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+        <div class="col">
+          <p>
+            3. Property alterations and guarantees for work done
+          </p>
+        </div>
+        <div class="col-1">
+          <i class="fas fa-file-upload fa-lg"></i>
+        </div>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<a class="btn btn-primary" href="/v0/property-logbook">Save</a>
+    
 {% endblock %}
