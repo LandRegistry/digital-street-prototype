@@ -1,16 +1,82 @@
-{% extends "layout.html" %}
+{% extends "lr-layout.html" %}
 
 {% block pageTitle %}
-    Search for a property
+    Pre contract enquiries
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"    
-  }) }}
 {% endblock %}
 
 {% block content %}
+<h1>Pre contract enquiries</h1><br>
 
+<form>
+    <div class="form-row">
+        <div class="col-5">
+            <p>Are there any planning restrictions on your property? &nbsp;<i class="far fa-question-circle"></i></p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="planning-yes" name="planning" class="custom-control-input" checked>
+                <label class="custom-control-label" for="planning-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="planning-no" name="planning" class="custom-control-input">
+                <label class="custom-control-label" for="planning-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-5">
+            <p>Are there any restrictions on what your property can be used for? &nbsp;<i class="far fa-question-circle"></i></p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="restrictions-yes" name="restrictions" class="custom-control-input" checked>
+                <label class="custom-control-label" for="restrictions-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="restrictions-no" name="restrictions" class="custom-control-input">
+                <label class="custom-control-label" for="restrictions-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-5">
+            <p>Have you made any alterations to your property? &nbsp;<i class="far fa-question-circle"></i></p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="alterations-yes" name="alterations" class="custom-control-input" checked>
+                <label class="custom-control-label" for="alterations-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="alterations-no" name="alterations" class="custom-control-input">
+                <label class="custom-control-label" for="alterations-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-5">
+            <p>Do you have any obligations to contribute to repairing or maintaining other land? &nbsp;<i class="far fa-question-circle"></i></p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="obligations-yes" name="obligations" class="custom-control-input">
+                <label class="custom-control-label" for="obligations-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="obligations-no" name="obligations" class="custom-control-input" checked>
+                <label class="custom-control-label" for="obligations-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br>
+            <a class="btn btn-primary" href="/v0/seller-pre-contract-enquiries2">Submit information</a><br><br>
+        </div>
+    </div>
+</form>
+    
 {% endblock %}

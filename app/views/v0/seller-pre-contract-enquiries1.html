@@ -1,16 +1,80 @@
-{% extends "layout.html" %}
+{% extends "lr-layout.html" %}
 
 {% block pageTitle %}
-    Search for a property
+    Pre contract enquiries
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"    
-  }) }}
 {% endblock %}
 
 {% block content %}
+<div class="row">
+    <div class="col">
+        <i class="fas fa-question-circle fa-3x"></i>
+    </div>
+    <div class="col-11">
+        <p>
+            Before you sell your property you may want to upload your pre-contract information.<br>
+            Having this information upfront will speed up the sale of your property.
+        </p>    
+    </div>
+</div>
 
+<h1>Pre contract enquiries</h1><br>
+
+<form>
+    <div class="form-row">
+        <div class="col-4">
+            <p>Is your property a listed building?</p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="listed-yes" name="listed" class="custom-control-input">
+                <label class="custom-control-label" for="listed-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="listed-no" name="listed" class="custom-control-input" checked>
+                <label class="custom-control-label" for="listed-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-4">
+            <p>Is your property in a conservation area?</p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="conservation-yes" name="conservation" class="custom-control-input">
+                <label class="custom-control-label" for="conservation-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="conservation-no" name="conservation" class="custom-control-input" checked>
+                <label class="custom-control-label" for="conservation-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-4">
+            <p>Have you had any disputes with your neighbours?</p>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="disputes-yes" name="disputes" class="custom-control-input">
+                <label class="custom-control-label" for="disputes-yes">Yes</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="disputes-no" name="disputes" class="custom-control-input" checked>
+                <label class="custom-control-label" for="disputes-no">No</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br>
+            <a class="btn btn-primary" href="/v0/seller-pre-contract-enquiries2">Continue</a><br><br>
+            <a href="/v0/seller-pre-contract-enquiries2">Skip this step</a>
+        </div>
+    </div>
+</form>
+    
 {% endblock %}
