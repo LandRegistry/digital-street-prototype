@@ -8,7 +8,7 @@ router.get('/foo', function(req, res) {
 })
 
 router.get('/property-logbook', function(req, res) {
-    const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
+    // const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
     const lastURL = req.headers.referer
     let role = 'anonymous'
     if (lastURL) {
@@ -18,7 +18,7 @@ router.get('/property-logbook', function(req, res) {
             role = 'owner'
         }
     }
-    res.render(path.resolve(__dirname, './property-logbook.html'), { role: role, property: propertyJSON })
+    res.render(path.resolve(__dirname, './property-logbook.html'), { role: role })
 })
 
 router.get('/identify-sign-in', function(req, res) {
