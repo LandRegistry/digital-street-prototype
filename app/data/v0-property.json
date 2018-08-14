@@ -3,6 +3,14 @@
     "owner": "Mrs Lisa White",
     "title_no": "DS1239B",
     "tenure": "Freehold",
+    "title_class": "Absolute",
+    "contact_details": [
+        "Lisa White",
+        "1 Digital Street",
+        "Bristol",
+        "BS2 8EN",
+        "pwhitman@gmail.com"
+    ],
     "description": "4 bedroom house with garden and private garage." ,
     "price_history": [
         {

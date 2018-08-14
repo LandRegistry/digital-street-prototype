@@ -21,9 +21,21 @@
                 Current owner: <strong>Mrs Lisa White</strong><br><br>
                 Title number: <strong>DS1239B</strong><br><br>
                 Tenure type: <strong>Freehold</strong><br><br>
-                
+                {% if role == 'owner' %}
+                Class of title: <strong>Absolute</strong><br><br>
+                {% endif %}
+
                 <strong>Property description:</strong><br>
-                4 bedroom house with garden and private garage.
+                4 bedroom house with garden and private garage.<br><br>
+
+                {% if role == 'owner' %}
+                    <strong>Contact details:</strong><br>
+                    Lisa White<br>
+                    1 Digital Street,<br>
+                    Bristol,<br>
+                    BS2 8EN<br>
+                    pwhitman@gmail.com
+                {% endif %}
             </p>
 
             {{ govukTable({

@@ -13,7 +13,6 @@ router.get('/property-logbook', function(req, res) {
     let role = 'anonymous'
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
-        console.log(lastEndpoint)
         if (lastEndpoint == 'seller-land-registry-checks') {
             role = 'owner'
         }
