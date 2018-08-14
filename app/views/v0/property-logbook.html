@@ -84,17 +84,35 @@
             <ul class="govuk-list govuk-list--bullet">
                 <li>use the path at the end of 2 Digital Street to access your property</li>
             </ul>
-
-            {{ govukButton({
-                text: "Claim this property",
-                href: "identify-sign-in"
-              }) }}
+            {% if role == 'anonymous' %}
+                {{ govukButton({
+                    text: "Claim this property",
+                    href: "identify-sign-in"
+                }) }}
+            {% elseif role == 'owner' %}
+                {{ govukButton({
+                    text: "I want to sell my property",
+                    href: "#"
+                }) }}
+                <p class="govuk-body"><a href="#">Download a legal copy of this information</a></p>
+            {% endif %}
         </div>
         <div class="govuk-grid-column-one-third">
             <div class="img-section">
                 <img src="/public/images/title-plan.jpg" alt="An image of the property's boundary">
                 <p class="govuk-body-s">Boundary of the property.</p>
             </div>
+            {% if role == 'owner' %}
+                <p class="govuk-body"><strong>HMLR documents:</strong>
+                    <a href="#">Official copy of the register</a>
+                    <a href="#">Title plan</a>
+                </p>
+                <p class="govuk-body"><strong>Your documents:</strong>
+                    <a href="#">Mortgage deed</a>
+                </p>
+                <p class="govuk-body">View your local authority <a href="#">searches document</a> or <a href="#">view on a map</a>
+                </p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

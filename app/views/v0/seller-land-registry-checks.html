@@ -1,0 +1,31 @@
+{% extends "lr-layout.html" %}
+
+{% block pageTitle %}
+    Performing Land Registry checks
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block pageBrand %}
+  <!-- Identify -->
+{% endblock %}
+
+{% block content %}
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1>We're carrying out checks with HM Land Registry</h1>
+        <br>
+        <i class="fa fa-spinner fa-spin" style="font-size:50px"></i>
+    </div>
+  </div>
+  <input id="next-page" value="/property-logbook" hidden>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    window.setTimeout(function(){
+        window.location.href = "/v0/property-logbook";
+    }, 5000);
+</script>
+{% endblock %}

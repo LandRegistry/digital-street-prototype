@@ -1,0 +1,45 @@
+{
+    "address": ["1 Digital Street", "Bristol", "BS2 8EN"],
+    "owner": "Mrs Lisa White",
+    "title_no": "DS1239B",
+    "tenure": "Freehold",
+    "description": "4 bedroom house with garden and private garage." ,
+    "price_history": [
+        {
+            "price": 210000,
+            "action": "Sold",
+            "date": "2017-06-17"
+        },
+        {
+            "price": 160000,
+            "action": "Sold",
+            "date": "2006-05-16"
+        },
+        {
+            "price": 125000,
+            "action": "Sold",
+            "date": "2001-08-16"
+        }
+    ],
+    "you_cant": [
+        "mine this land",
+        "build a factory",
+        "use this land for a business",
+        "build on the south side of the property"
+    ],
+    "others_can": [
+        "local church can charge a regular maintenance fee",
+        "owners of 2 Digital Street can use the path at the back of their land but must contribute to its maintenance costs",
+        "<a href='#'>Avon Road's Commission</a> can access your garden to maintain the dual carriageway at the end of your property"
+    ],
+    "you_can": [
+        "use the path at the end of 2 Digital Street to access your property"
+    ],
+    "images": [
+        {
+            "src": "/public/images/title-plan.jpg",
+            "alt": "An image of the property's boundary",
+            "description": "Boundary of the property."
+        }
+    ]
+}
