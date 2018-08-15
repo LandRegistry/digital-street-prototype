@@ -5,7 +5,7 @@
 <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-MEq8xmFd953gp2FVvLd8DUEvfBjGCzDjem+gmDqfyyWcaxX4BUD7TtSu1EszNTvK" crossorigin="anonymous">
 {% endblock %}
 
-{% block pageTitle %}Search | Movr{% endblock %}
+{% block pageTitle %}Agreement in Principle | NatWesteros{% endblock %}
 
 {% block navbar %}
 {% include 'includes/buyers_lender_navbar.html' %}
@@ -13,4 +13,34 @@
 
 {% block content %}
 <!-- Main content goes here -->
+<div class="row">
+    <div class="col">
+        <h1>Apply for a mortgage in principle</h1>
+        <form>
+            <div class="form-group">
+                <label for="buyerName">Buyer name</label>
+                <input type="text" class="form-control" id="buyerName">
+            </div>
+            <div class="form-group">
+                <label for="amount">How much do you want to borrow?</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="currency">£</span>
+                    </div>
+                    <input type="number" class="form-control" id="amount" aria-describedby="currency">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="years">How long do you want to borrow for?</label>
+                <div class="input-group">
+                    <input type="number" class="form-control" id="years" aria-describedby="years">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="years">years</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Apply</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
