@@ -34,4 +34,17 @@ router.get('/identify-sign-in', function(req, res) {
     res.render(path.resolve(__dirname, './identify-sign-in.html'), { nextURL: nextURL })
 })
 
+router.post('/delegate-access', function(req, res) {
+    req.session.data[req.body['delegate-type']] = {
+        'name': req.body['delegate-name'],
+        'email': req.body['delegate-email'],
+    }
+    console.log(req.body)
+    if (['estate_agent', 'surveyor'].includes(req.body['delegate-type'])) {
+        res.render(path.resolve(__dirname, './property-logbook.html'), { role: 'seller' })
+    } else if (req.body['delegate-type'] == 'conveyancer') {
+        res.render(path.resolve(__dirname, './seller-draft-sales-contract.html'))
+    }
+})
+
 module.exports = router
