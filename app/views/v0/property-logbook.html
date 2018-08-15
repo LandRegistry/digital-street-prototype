@@ -101,11 +101,18 @@
                     text: "Claim this property",
                     href: "identify-sign-in"
                 }) }}
-            {% elseif role == 'owner' %}
+            {% elseif ['owner', 'seller'].includes(role) %}
+                {% if role == 'owner' %}
+                    {{ govukButton({
+                        text: "I want to sell my property",
+                        href: "seller-pre-contract-enquiries1"
+                    }) }}
+                {% elseif role == 'seller' %}
                 {{ govukButton({
-                    text: "I want to sell my property",
-                    href: "seller-pre-contract-enquiries1"
+                    text: "Allow access to my logbook",
+                    href: "seller-delegate-access"
                 }) }}
+                {% endif %}
                 <p class="govuk-body"><a href="#">Download a legal copy of this information</a></p>
             {% endif %}
         </div>

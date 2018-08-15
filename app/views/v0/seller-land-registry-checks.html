@@ -1,14 +1,16 @@
-{% extends "lr-layout.html" %}
+{% extends "generic-layout.html" %}
+
+{% block pageStyles %}
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-3Ivskwia8Fui5tbQi+RW4DgTkJ8d+hW7mLe7Yk89ibmD9482VECh0WFof8kIEjwI" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+{% endblock %}
 
 {% block pageTitle %}
     Performing Land Registry checks
 {% endblock %}
 
-{% block beforeContent %}
-{% endblock %}
-
-{% block pageBrand %}
-  Identify
+{% block navbar %}
+{% include 'includes/identify_navbar.html' %}
 {% endblock %}
 
 {% block content %}
