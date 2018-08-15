@@ -2,14 +2,38 @@
 
 {% block pageStyles %}
 <!-- Custom page styles go here -->
-    <link rel="stylesheet" href="/public/stylesheets/movr.css" /> 
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-J7kOMHmyCHLNgMkMNyYuEvEZfdApW59rmw1I94S42EBym3qwLozQi2LGSOzIDRWW" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}Agreement in Principle | MovR{% endblock %}
+
+{% block navbar %}
+{% include 'includes/movr_navbar.html' %}
 {% endblock %}
 
 {% block content %}
 <!-- Main content goes here -->
-<h1>Verify agreement in principle</h1>
-{% endblock %}
-
-{% block pageScripts %}
-<!-- Custom page scripts go here -->
+<div class="row">
+    <div class="col">
+        <h1>Verify mortgage agreement in principle</h1>
+        <form>
+            <div class="form-group">
+                <label for="lender">Lender</label>
+                <select class="form-control" id="lender">
+                    <option selected disabled hidden>Choose one</option>
+                    <option>NatWesteros</option>
+                    <option>Iron Bank of Braavos</option>
+                    <option>Gringotts Wizarding Bank</option>
+                    <option>Gotham National Bank</option>
+                    <option>Imperial Bank</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="buyerName">Reference number</label>
+                <input type="text" class="form-control" id="buyerName">
+            </div>
+            <button type="submit" class="btn btn-primary">Verify</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
