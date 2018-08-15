@@ -2,14 +2,15 @@
 
 {% block pageStyles %}
 <!-- Custom page styles go here -->
-    <link rel="stylesheet" href="/public/stylesheets/movr.css" /> 
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-J7kOMHmyCHLNgMkMNyYuEvEZfdApW59rmw1I94S42EBym3qwLozQi2LGSOzIDRWW" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}Search | Movr{% endblock %}
+
+{% block navbar %}
+{% include 'includes/movr_navbar.html' %}
 {% endblock %}
 
 {% block content %}
 <!-- Main content goes here -->
-<h1>Movr</h1>
-{% endblock %}
-
-{% block pageScripts %}
-<!-- Custom page scripts go here -->
 {% endblock %}
