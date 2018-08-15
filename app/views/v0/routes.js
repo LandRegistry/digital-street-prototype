@@ -10,16 +10,16 @@ router.get('/foo', function(req, res) {
 router.get('/property-logbook', function(req, res) {
     // const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
     const lastURL = req.headers.referer
-    let role = 'anonymous'
+    console.log(lastURL)
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
         if (lastEndpoint == 'seller-land-registry-checks') {
-            role = 'owner'
+            req.session.role = 'owner'
         } else if (lastEndpoint == 'seller-upload-documents') {
-            role = 'seller'
+            req.session.role = 'seller'
         }
     }
-    res.render(path.resolve(__dirname, './property-logbook.html'), { role: role })
+    res.render(path.resolve(__dirname, './property-logbook.html'), { role: req.session.role })
 })
 
 router.get('/identify-sign-in', function(req, res) {
@@ -39,11 +39,11 @@ router.post('/delegate-access', function(req, res) {
         'name': req.body['delegate-name'],
         'email': req.body['delegate-email'],
     }
-    console.log(req.body)
-    if (['estate_agent', 'surveyor'].includes(req.body['delegate-type'])) {
-        res.render(path.resolve(__dirname, './property-logbook.html'), { role: 'seller' })
+    if (req.body['delegate-type'] == 'estate_agent') {
+        req.session.notification = 'valuation'
+        res.redirect('/v0/seller-estate-agent-adds-valuation')
     } else if (req.body['delegate-type'] == 'conveyancer') {
-        res.render(path.resolve(__dirname, './seller-draft-sales-contract.html'))
+        res.redirect('/v0/seller-draft-sales-contract')
     }
 })
 

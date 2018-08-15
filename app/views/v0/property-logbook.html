@@ -4,13 +4,6 @@
     Property logbook
 {% endblock %}
 
-{% block beforeContent %}
-  <!-- {{ govukBackLink({
-    text: "Back",
-    href: "#"
-  }) }} -->
-{% endblock %}
-
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -28,7 +21,7 @@
                 <strong>Property description:</strong><br>
                 4 bedroom house with garden and private garage.<br><br>
 
-                {% if role == 'owner' %}
+                {% if ['owner', 'seller'].includes(role) %}
                     <strong>Contact details:</strong><br>
                     Lisa White<br>
                     1 Digital Street,<br>
@@ -96,7 +89,7 @@
             <ul class="govuk-list govuk-list--bullet">
                 <li>use the path at the end of 2 Digital Street to access your property</li>
             </ul>
-            {% if role == 'anonymous' %}
+            {% if not role %}
                 {{ govukButton({
                     text: "Claim this property",
                     href: "identify-sign-in"
@@ -108,10 +101,10 @@
                         href: "seller-pre-contract-enquiries1"
                     }) }}
                 {% elseif role == 'seller' %}
-                {{ govukButton({
-                    text: "Allow access to my logbook",
-                    href: "seller-delegate-access"
-                }) }}
+                    {{ govukButton({
+                        text: "Allow access to my logbook",
+                        href: "seller-delegate-access"
+                    }) }}
                 {% endif %}
                 <p class="govuk-body"><a href="#">Download a legal copy of this information</a></p>
             {% endif %}
