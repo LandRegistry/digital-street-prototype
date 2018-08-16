@@ -2,14 +2,52 @@
 
 {% block pageStyles %}
 <!-- Custom page styles go here -->
-    <link rel="stylesheet" href="/public/stylesheets/movr.css" /> 
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-J7kOMHmyCHLNgMkMNyYuEvEZfdApW59rmw1I94S42EBym3qwLozQi2LGSOzIDRWW" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}Make an offer | MovR{% endblock %}
+
+{% block navbar %}
+{% include 'includes/movr_navbar.html' %}
 {% endblock %}
 
 {% block content %}
 <!-- Main content goes here -->
-<h1>Make an offer for 1 Digital Street</h1>
-{% endblock %}
-
-{% block pageScripts %}
-<!-- Custom page scripts go here -->
+<div class="row">
+    <div class="col">
+        <h1>Make an offer for 1 Digital Street</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <form>
+            <legend>This information is pre-filled from your verified details:</legend>
+            <div class="form-group">
+                <label for="buyerName">Buyer name</label>
+                <input type="text" readonly class="form-control" id="buyerName" value="Zaphod Beeblebrox">
+            </div>
+            <div class="form-group">
+                <label for="buildingStreet">Building and street</label>
+                <input type="text" readonly class="form-control" id="buildingStreet" value="42 Heart of Gold Street">
+            </div>
+            <div class="form-group">
+                <label for="townCity">Town or city</label>
+                <input type="text" readonly class="form-control" id="townCity" value="Magrathea">
+            </div>
+            <div class="form-group">
+                <label for="county">County</label>
+                <input type="text" readonly class="form-control" id="county" value="Devon">
+            </div>
+            <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" readonly class="form-control" id="postcode" value="PL1 1AA">
+            </div>
+            <div class="form-group">
+                <label for="offer">How much do you want to offer?</label>
+                <input type="number" class="form-control" id="offer" autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary">Make offer</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
