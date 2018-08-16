@@ -1,42 +1,48 @@
-{% extends "generic-layout.html" %}
-
-{% block pageStyles %}
-<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="stylesheet" href="/public/stylesheets/generic.css">
-{% endblock %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
     Allow access to your logbook
 {% endblock %}
 
-{% block navbar %}
-{% include 'includes/conveyit_navbar.html' %}
-{% endblock %}
-
 {% block content %}
-<h1>Allow access to your logbook</h1><br>
+<h1 class="govuk-heading-xl">Allow access to your logbook</h1>
 
 <form action="/v0/delegate-access" method="post">
-    <div class="col-4">
-        <div class="form-group">
-            <label for="delegate-type">Who do you want to give access to?</label>
-            <select id="delegate-type" name="delegate-type" class="custom-select">
-                <option value="estate_agent" selected>Estate agent</option>
-                <option value="conveyancer">Conveyancer</option>
-                <option value="surveyor">Surveyor</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="delegate-name">What's their name?</label>
-            <input type="text" class="form-control" id="delegate-name" name="delegate-name">
-        </div>
-        <div class="form-group">
-            <label for="delegate-email">What's their email address?</label>
-            <input type="text" class="form-control" id="delegate-email" name="delegate-email">
-        </div>
-        <button class="btn btn-primary">Give Access</button>
+
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="delegate-type">
+        Who do you want to give access to?
+    </label>
+    <select class="govuk-select govuk-input--width-10" id="delegate-type" name="delegate-type">
+        <option value="estate_agent" {% if selected_type == 'estate_agent' %} selected {% endif %}>Estate agent</option>
+        <option value="seller_conveyancer" {% if selected_type == 'seller_conveyancer' %} selected {% endif %}>Your conveyancer</option>
+        <option value="buyer_conveyancer" {% if selected_type == 'buyer_conveyancer' %} selected {% endif %}>Buyer's conveyancer</option>
+        <option value="surveyor" {% if selected_type == 'surveyor' %} selected {% endif %}>Surveyor</option>
+    </select>
     </div>
+
+    {{ govukInput({
+        label: {
+          text: "What's their name?"
+        },
+        classes: "govuk-input--width-20",
+        id: "delegate-name",
+        name: "delegate-name"
+    }) }}
+
+    {{ govukInput({
+        label: {
+          text: "What's their email address?"
+        },
+        classes: "govuk-input--width-20",
+        id: "delegate-email",
+        name: "delegate-email"
+    }) }}
+
+    {{ govukButton({
+        text: "Give access"
+    }) }}
+
 </form>
     
 {% endblock %}
