@@ -10,6 +10,7 @@ router.get('/foo', function(req, res) {
 router.get('/property-logbook', function(req, res) {
     // const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
     const lastURL = req.headers.referer
+    let notification = ""
     console.log(lastURL)
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
@@ -17,9 +18,13 @@ router.get('/property-logbook', function(req, res) {
             req.session.role = 'owner'
         } else if (lastEndpoint == 'seller-upload-documents') {
             req.session.role = 'seller'
-        }
+        } else if (lastEndpoint == 'seller-estate-agent-adds-valuation') {
+            notification = 'valuation'
+        } else if (lastEndpoint == 'seller-surveyor-adds-report') {
+            notification = 'report'
+        } 
     }
-    res.render(path.resolve(__dirname, './property-logbook.html'), { role: req.session.role })
+    res.render(path.resolve(__dirname, './property-logbook.html'), { role: req.session.role, notification: notification })
 })
 
 router.get('/identify-sign-in', function(req, res) {
@@ -34,16 +39,33 @@ router.get('/identify-sign-in', function(req, res) {
     res.render(path.resolve(__dirname, './identify-sign-in.html'), { nextURL: nextURL })
 })
 
+router.get('/seller-delegate-access', function(req, res) {
+    // console.log(req.session.data)
+    let selected_type = ""
+    const delegate_types = ['surveyor', 'buyer_conveyancer', 'seller_conveyancer', 'estate_agent']
+    for (delegate_type in delegate_types) {
+        if (!req.session.data[delegate_types[delegate_type]]) {
+            selected_type = delegate_types[delegate_type];
+        }
+    }
+    res.render(path.resolve(__dirname, './seller-delegate-access.html'), { selected_type: selected_type })
+})
+
 router.post('/delegate-access', function(req, res) {
     req.session.data[req.body['delegate-type']] = {
         'name': req.body['delegate-name'],
         'email': req.body['delegate-email'],
     }
     if (req.body['delegate-type'] == 'estate_agent') {
-        req.session.notification = 'valuation'
         res.redirect('/v0/seller-estate-agent-adds-valuation')
-    } else if (req.body['delegate-type'] == 'conveyancer') {
+    } else if (req.body['delegate-type'] == 'seller_conveyancer') {
         res.redirect('/v0/seller-draft-sales-contract')
+    } else if (req.body['delegate-type'] == 'buyer_conveyancer') {
+        res.redirect('/v0/seller-delegate-access')
+    } else if (req.body['delegate-type'] == 'surveyor') {
+        res.redirect('/v0/seller-surveyor-adds-report')
+    } else {
+        res.status(404).send('Not found')
     }
 })
 
