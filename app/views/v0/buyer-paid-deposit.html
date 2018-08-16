@@ -2,14 +2,20 @@
 
 {% block pageStyles %}
 <!-- Custom page styles go here -->
-    <link rel="stylesheet" href="/public/stylesheets/movr.css" /> 
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-J7kOMHmyCHLNgMkMNyYuEvEZfdApW59rmw1I94S42EBym3qwLozQi2LGSOzIDRWW" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}Paid deposit | MovR{% endblock %}
+
+{% block navbar %}
+{% include 'includes/movr_navbar.html' %}
 {% endblock %}
 
 {% block content %}
 <!-- Main content goes here -->
-<h1>You've paid your deposit for 1 Digital Street</h1>
-{% endblock %}
-
-{% block pageScripts %}
-<!-- Custom page scripts go here -->
+<div class="row">
+    <div class="col">
+        <br><h1 class="text-center">You've paid your deposit for 1 Digital Street<br><i class="fas fa-check fa-fw fa-6x text-success"></i></h1>
+    </div>
+</div>
 {% endblock %}
