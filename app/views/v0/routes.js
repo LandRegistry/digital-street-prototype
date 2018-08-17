@@ -11,7 +11,6 @@ router.get('/property-logbook', function(req, res) {
     // const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
     const lastURL = req.headers.referer
     let notification = ""
-    console.log(lastURL)
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
         if (lastEndpoint == 'seller-land-registry-checks') {
@@ -20,11 +19,33 @@ router.get('/property-logbook', function(req, res) {
             req.session.role = 'seller'
         } else if (lastEndpoint == 'seller-estate-agent-adds-valuation') {
             notification = 'valuation'
+            req.session.valuation = {
+                "price": "£250,000",
+                "valuer": "Bank of England PLC.",
+                "date": "25 July 2018"
+            }
         } else if (lastEndpoint == 'seller-surveyor-adds-report') {
             notification = 'report'
+            req.session.surveyor_report = true
+        } else if (lastEndpoint == 'seller-receives-offer') {
+            notification = 'offer'
+        } else if (lastEndpoint == 'seller-review-offer') {
+            req.session.offer_accepted = new Date().toLocaleDateString('en-GB')
+            notification = 'sales_contract'
+        } else if (lastEndpoint == 'seller-sale-confirmation') {            
+            req.session.role = ''
+            req.session.sold = true
         } 
     }
-    res.render(path.resolve(__dirname, './property-logbook.html'), { role: req.session.role, notification: notification })
+    res.render(path.resolve(__dirname, './property-logbook.html'), 
+        { 
+            role: req.session.role,
+            notification: notification, 
+            valuation: req.session.valuation,
+            surveyor_report: req.session.surveyor_report,
+            offer_accepted: req.session.offer_accepted,
+            sold: req.session.sold
+        })
 })
 
 router.get('/identify-sign-in', function(req, res) {
@@ -40,7 +61,6 @@ router.get('/identify-sign-in', function(req, res) {
 })
 
 router.get('/seller-delegate-access', function(req, res) {
-    // console.log(req.session.data)
     let selected_type = ""
     const delegate_types = ['surveyor', 'buyer_conveyancer', 'seller_conveyancer', 'estate_agent']
     for (delegate_type in delegate_types) {
@@ -67,6 +87,19 @@ router.post('/delegate-access', function(req, res) {
     } else {
         res.status(404).send('Not found')
     }
+})
+
+router.get('/seller-agree-to-sell', function(req, res) {
+    const lastURL = req.headers.referer
+    if (lastURL) {
+        const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
+        if (lastEndpoint == 'seller-final-sales-contract') {
+            req.session.seller_sales_contract = true
+        } else if (lastEndpoint == 'seller-transfer-ownership') {
+            req.session.seller_transfer_ownership = true
+        }
+    }
+    res.render(path.resolve(__dirname, './seller-agree-to-sell.html'), { seller_sales_contract: req.session.seller_sales_contract, seller_transfer_ownership: req.session.seller_transfer_ownership })
 })
 
 module.exports = router

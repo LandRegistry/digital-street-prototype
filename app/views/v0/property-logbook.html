@@ -8,7 +8,17 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             {% if notification %}
-                {% if notification == 'valuation' %}
+                {% if notification == 'offer_accepted' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You can now sign your sales contract<br>
+                            <a href='/v0/seller-agree-to-sell'>View sales contract</a>
+                        </p>
+                    </div>
+                {% elseif notification == 'valuation' %}
                     <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                         <h2 class="govuk-error-summary__title" id="error-summary-title">
                             Good news!
@@ -28,6 +38,16 @@
                             <a href='#'>View your surveyor report</a>
                         </p>
                     </div>
+                {% elseif notification == 'offer' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You've received an offer for 1 Digital Street<br>
+                            <a href='/v0/seller-review-offer'>Review this offer</a>
+                        </p>
+                    </div>
                 {% endif %}
             {% endif %}
             
@@ -35,7 +55,11 @@
                 Bristol,<br>BS2 8EN</h1>
             </h1>
             <p class="govuk-body">
-                Current owner: <strong>Mrs Lisa White</strong><br><br>
+                {% if sold %}
+                    Current owner: <strong>Mr David Jones</strong><br><br>
+                {% else %}
+                    Current owner: <strong>Mrs Lisa White</strong><br><br>
+                {% endif %}
                 Title number: <strong>DS1239B</strong><br><br>
                 Tenure type: <strong>Freehold</strong><br><br>
                 {% if role == 'owner' %}
@@ -55,46 +79,53 @@
                 {% endif %}
             </p>
 
-            {{ govukTable({
-                caption: "Price history",
-                firstCellIsHeader: false,                
-                rows: [
-                  [
-                    {
-                      text: "£210,000"
-                    },
-                    {
-                      text: "Sold"
-                    },
-                    {
-                      text: "17 June 2017"
-                    }
-                  ],
-                  [
-                    {
-                      text: "£160,000"
-                    },
-                    {
-                      text: "Sold"
-                    },
-                    {
-                      text: "16 May 2006"
-                    }
-                  ],
-                  [
-                    {
-                      text: "£125,000"
-                    },
-                    {
-                      text: "Sold"
-                    },
-                    {
-                      text: "16 August 2001"
-                    }
-                  ]
-                ]
-              }) }}
-            
+            {% if offer_accepted and role == 'seller' %}
+                {{ govukWarningText({
+                    text: "Offer accepted on property " + offer_accepted,
+                    iconFallbackText: "Warning"
+                }) }}
+            {% endif %}
+
+            {% if valuation and role == 'seller' %}
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption">Valuation history</caption>                
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">{{ valuation.price }}</th>
+                        <td class="govuk-table__cell ">{{ valuation.valuer }}</td>
+                        <td class="govuk-table__cell ">{{ valuation.date }}</td>
+                        </tr>                        
+                    </tbody>
+                </table>
+            {% endif %}
+                  
+            <table class="govuk-table">
+                <caption class="govuk-table__caption">Price history</caption>                
+                <tbody class="govuk-table__body">
+                    {% if sold %} 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£250,000</th>
+                        <td class="govuk-table__cell ">Sold</td>
+                        <td class="govuk-table__cell ">17 August 2018</td>
+                    </tr>
+                    {% endif %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£210,000</th>
+                        <td class="govuk-table__cell ">Sold</td>
+                        <td class="govuk-table__cell ">17 June 2017</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£160,000</th>
+                        <td class="govuk-table__cell ">Sold</td>
+                        <td class="govuk-table__cell ">16 May 2006</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£125,000</th>
+                        <td class="govuk-table__cell ">Sold</td>
+                        <td class="govuk-table__cell ">16 August 2001</td>
+                    </tr>
+                </tbody>
+            </table>
             
             <p class="govuk-body"><strong>You can't:</strong></p>
             <ul class="govuk-list govuk-list--bullet">    
@@ -125,10 +156,27 @@
                         href: "seller-pre-contract-enquiries1"
                     }) }}
                 {% elseif role == 'seller' %}
-                    {{ govukButton({
-                        text: "Allow access to my logbook",
-                        href: "seller-delegate-access"
-                    }) }}
+                    {% if offer_accepted %} 
+                        {{ govukButton({
+                            text: "Review sales contract",
+                            href: "seller-agree-to-sell"
+                        }) }}
+                    {% elseif notification == 'offer' %} 
+                        {{ govukButton({
+                            text: "Respond to offer",
+                            href: "seller-review-offer"
+                        }) }}
+                    {% elseif surveyor_report %}
+                        {{ govukButton({
+                            text: "Wait for offer",
+                            href: "seller-receives-offer"
+                        }) }}
+                    {% else %}
+                        {{ govukButton({
+                            text: "Allow access to my logbook",
+                            href: "seller-delegate-access"
+                        }) }}
+                    {% endif %}
                 {% endif %}
                 <p class="govuk-body"><a href="#">Download a legal copy of this information</a></p>
             {% endif %}
@@ -149,6 +197,9 @@
                         <a href="#">Gas certificate</a><br>
                         <a href="#">Renovations information</a><br>
                         <a href="#">Planning restrictions</a><br>
+                        {% if surveyor_report %}
+                            <a href="#">Surveyor report</a><br>
+                        {% endif %}
                     {% endif %}
                 </p>
                 <p class="govuk-body">View your local authority <a href="#">searches document</a> or <a href="#">view on a map</a></p>
