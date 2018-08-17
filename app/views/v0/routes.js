@@ -115,4 +115,10 @@ router.get('/seller-pre-contract-enquiries2', function(req, res) {
 
 // Buyer routes below here...
 
+router.get('/buyer-marketplace', function(req, res) {
+    var data = fs.readFileSync(__dirname + '/../../data/v0-marketplace.json')
+    var parsedData = JSON.parse(data)
+    res.render(path.resolve(__dirname, './buyer-marketplace'), {"data": parsedData})
+})
+
 module.exports = router
