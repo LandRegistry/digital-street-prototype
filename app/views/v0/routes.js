@@ -113,4 +113,6 @@ router.get('/seller-pre-contract-enquiries2', function(req, res) {
     res.render(path.resolve(__dirname, './seller-upload-documents.html'), { role: req.session.role})
 })
 
+// Buyer routes below here...
+
 module.exports = router
