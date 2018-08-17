@@ -20,3 +20,38 @@ $govuk-global-styles: true;
 .img-section img {
     border: 2px solid black;
 }
+
+.account-bar {
+    margin: 10px;
+    // border-bottom: 1px solid black;
+}
+
+.account-bar a {
+    color: #404040;
+    text-decoration: none;
+}
+
+.account-bar a:hover {
+    color: #a9a9a9;
+}
+
+.account-links {
+    float: right;
+}
+
+.account-links a {
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .account-links {
+        border-left: 1px solid #404040;
+    }
+
+    .account-links a {
+        display: block;
+        padding: 4px 0px 4px 20px;
+    }
+
+    
+}

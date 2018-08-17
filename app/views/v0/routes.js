@@ -8,7 +8,6 @@ router.get('/foo', function(req, res) {
 })
 
 router.get('/property-logbook', function(req, res) {
-    // const propertyJSON = JSON.parse(fs.readFileSync('../../../data/v0-property.json'))
     const lastURL = req.headers.referer
     let notification = ""
     if (lastURL) {
@@ -39,12 +38,12 @@ router.get('/property-logbook', function(req, res) {
     }
     res.render(path.resolve(__dirname, './property-logbook.html'), 
         { 
-            role: req.session.role,
             notification: notification, 
-            valuation: req.session.valuation,
-            surveyor_report: req.session.surveyor_report,
             offer_accepted: req.session.offer_accepted,
-            sold: req.session.sold
+            role: req.session.role,
+            surveyor_report: req.session.surveyor_report,
+            sold: req.session.sold,
+            valuation: req.session.valuation
         })
 })
 
@@ -68,7 +67,7 @@ router.get('/seller-delegate-access', function(req, res) {
             selected_type = delegate_types[delegate_type];
         }
     }
-    res.render(path.resolve(__dirname, './seller-delegate-access.html'), { selected_type: selected_type })
+    res.render(path.resolve(__dirname, './seller-delegate-access.html'), { selected_type: selected_type, role: req.session.role })
 })
 
 router.post('/delegate-access', function(req, res) {
@@ -100,6 +99,18 @@ router.get('/seller-agree-to-sell', function(req, res) {
         }
     }
     res.render(path.resolve(__dirname, './seller-agree-to-sell.html'), { seller_sales_contract: req.session.seller_sales_contract, seller_transfer_ownership: req.session.seller_transfer_ownership })
+})
+
+router.get('/seller-pre-contract-enquiries1', function(req, res) {
+    res.render(path.resolve(__dirname, './seller-pre-contract-enquiries1.html'), { role: req.session.role})
+})
+
+router.get('/seller-pre-contract-enquiries2', function(req, res) {
+    res.render(path.resolve(__dirname, './seller-pre-contract-enquiries2.html'), { role: req.session.role})
+})
+
+router.get('/seller-pre-contract-enquiries2', function(req, res) {
+    res.render(path.resolve(__dirname, './seller-upload-documents.html'), { role: req.session.role})
 })
 
 module.exports = router

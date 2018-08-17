@@ -40,6 +40,12 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+
+  {% if role %}
+    {% if ['seller', 'owner'].includes(role) %}
+      {% include "includes/account_bar.html" %}
+    {% endif %}
+  {% endif %}
 {% endblock %}
 
 {% if useAutoStoreData %}
