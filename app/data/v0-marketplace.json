@@ -1,0 +1,26 @@
+[
+    {
+        "image": "/public/images/1 Digital street.png",
+        "street": "1 Digital Street",
+        "town": "Bristol",
+        "postcode": "BS2 8EN",
+        "price": "250,000",
+        "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
+    },
+    {
+        "image": "/public/images/1 Digital street.png",
+        "street": "1 Digital Street",
+        "town": "Bristol",
+        "postcode": "BS2 8EN",
+        "price": "250,000",
+        "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
+    },
+    {
+        "image": "/public/images/1 Digital street.png",
+        "street": "1 Digital Street",
+        "town": "Bristol",
+        "postcode": "BS2 8EN",
+        "price": "250,000",
+        "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
+    }
+]
