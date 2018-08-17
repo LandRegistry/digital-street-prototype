@@ -20,26 +20,26 @@
 </div>
 <div class="row">
     <div class="col-lg-8">
-        <form>
+        <form action="buyer-confirm-agreement-in-principle" method="post">
             <div class="form-group">
                 <label for="buyerName">Buyer name</label>
-                <input type="text" class="form-control" id="buyerName">
+                <input type="text" class="form-control" id="buyerName" name="buyerName" value="{{ data['buyerName'] }}">
             </div>
             <div class="form-group">
                 <label for="buildingStreet">Building and street</label>
-                <input type="text" class="form-control" id="buildingStreet">
+                <input type="text" class="form-control" id="buildingStreet" name="buildingStreet" value="{{ data['buildingStreet'] }}">
             </div>
             <div class="form-group">
                 <label for="townCity">Town or city</label>
-                <input type="text" class="form-control" id="townCity">
+                <input type="text" class="form-control" id="townCity" name="townCity" value="{{ data['townCity'] }}">
             </div>
             <div class="form-group">
                 <label for="county">County</label>
-                <input type="text" class="form-control" id="county">
+                <input type="text" class="form-control" id="county" name="county" value="{{ data['county'] }}">
             </div>
             <div class="form-group">
                 <label for="postcode">Postcode</label>
-                <input type="text" class="form-control" id="postcode">
+                <input type="text" class="form-control" id="postcode" name="postcode" value="{{ data['postcode'] }}">
             </div>
             <div class="form-group">
                 <label for="amount">How much do you want to borrow?</label>
@@ -47,19 +47,19 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="currency">£</span>
                     </div>
-                    <input type="number" class="form-control" id="amount" aria-describedby="currency">
+                    <input type="number" class="form-control" id="amount" name="amount" value="{{ data['value'] }}" aria-describedby="currency">
                 </div>
             </div>
             <div class="form-group">
                 <label for="years">How long do you want to borrow for?</label>
                 <div class="input-group">
-                    <input type="number" class="form-control" id="years" aria-describedby="years">
+                    <input type="number" class="form-control" id="years" name="years" value="{{ data['years'] }}" aria-describedby="years">
                     <div class="input-group-append">
                         <span class="input-group-text" id="years">years</span>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Apply</button>
+            <button type="submit" class="btn btn-primary btn-lg">Apply</button>
         </form>
     </div>
 </div>
