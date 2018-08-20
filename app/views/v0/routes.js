@@ -109,7 +109,7 @@ router.get('/seller-pre-contract-enquiries2', function(req, res) {
     res.render(path.resolve(__dirname, './seller-pre-contract-enquiries2.html'), { role: req.session.role})
 })
 
-router.get('/seller-pre-contract-enquiries2', function(req, res) {
+router.get('/seller-upload-documents', function(req, res) {
     res.render(path.resolve(__dirname, './seller-upload-documents.html'), { role: req.session.role})
 })
 
