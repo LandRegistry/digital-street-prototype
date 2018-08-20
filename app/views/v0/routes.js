@@ -113,4 +113,12 @@ router.get('/seller-upload-documents', function(req, res) {
     res.render(path.resolve(__dirname, './seller-upload-documents.html'), { role: req.session.role})
 })
 
+// Buyer routes below here...
+
+router.get('/buyer-marketplace', function(req, res) {
+    var data = fs.readFileSync(__dirname + '/../../data/v0-marketplace.json')
+    var parsedData = JSON.parse(data)
+    res.render(path.resolve(__dirname, './buyer-marketplace'), {"data": parsedData})
+})
+
 module.exports = router

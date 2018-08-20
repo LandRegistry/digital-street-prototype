@@ -16,7 +16,7 @@
 <div class="row">
     <div class="col">
         <div class="jumbotron">
-            <h1 class="display-4">You've been approved to borrow £250,000 over 30 years.</h1>
+            <h1 class="display-4">You've been approved to borrow £{{ data['amount'] }} over {{ data['years'] }} years.</h1>
             <hr>
             <p class="lead"><strong>Your unique reference number is: ABC1234</strong></p>
             <p>You will need this unique reference number when making an offer on a property.</p>
@@ -24,4 +24,6 @@
         </div>
     </div>
 </div>
+
+<a href="buyer-marketplace">Next</a>
 {% endblock %}

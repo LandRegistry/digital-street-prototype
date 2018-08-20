@@ -1,12 +1,12 @@
 <br>
 <div class="card border-primary">
-    <img class="card-img-top" src="/public/images/1 Digital street.png" alt="Card image cap">
+    <img class="card-img-top" src="{{ property['image'] }}}" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">1 Digital Street</h5>
-        <p class="lead"><strong>£250,000</strong></p>
-        <p class="card-text">A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre</p>
+        <h5 class="card-title">{{ property['street'] }}<br>{{ property['town'] }}<br>{{ property['postcode'] }}</h5>
+        <p class="lead"><strong>£{{ property['price'] }}</strong></p>
+        <p class="card-text">{{ property['description'] }}</p>
     </div>
     <div class="card-footer">
-        <a href="buyer-make-an-offer" class="btn btn-primary">Make offer</a>
+        <a href="buyer-make-an-offer" class="btn btn-outline-primary">Make offer</a>
     </div>
 </div>
