@@ -3,24 +3,24 @@
         "image": "/public/images/1 Digital street.png",
         "street": "1 Digital Street",
         "town": "Bristol",
-        "postcode": "BS2 8EN",
+        "postcode": "BS2",
         "price": "250,000",
         "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
     },
     {
         "image": "/public/images/1 Digital street.png",
-        "street": "1 Digital Street",
+        "street": "Royal York Crescent, Clifton",
         "town": "Bristol",
-        "postcode": "BS2 8EN",
-        "price": "250,000",
-        "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
+        "postcode": "BS8",
+        "price": "530,000",
+        "description": "Located on this prestigious address, enjoying stunning far reaching views over Bristol, this impressive first floor balcony flat must be viewed."
     },
     {
         "image": "/public/images/1 Digital street.png",
-        "street": "1 Digital Street",
-        "town": "Bristol",
-        "postcode": "BS2 8EN",
-        "price": "250,000",
-        "description": "A beautifully presented 4 bedroom house within 0.5 miles of Cabot Court Shopping Centre"
+        "street": "45 Devonshire Road",
+        "town": "Westbury Park",
+        "postcode": "BS6",
+        "price": "375,000",
+        "description": "For sale with no onward chain. This spacious and tasteful three double bedroom freehold maisonette has a lovely location in Bristol's leafy Westbury Park suburb, just around the corner from the picturesque green open spaces of The Downs."
     }
 ]
