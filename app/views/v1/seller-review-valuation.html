@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Review property valuation
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you want to accept a valuation of £250,000 for 1 Digital Street?</h1>
+
+{{ govukWarningText({
+    classes: "govuk-!-margin-bottom-4",
+    text: "By accepting this valuation you agree to put your property on the market at this price"
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "valuation",
+  name: "valiation",
+  items: [
+    {
+      value: "yes",
+      text: "Yes" 
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+})
+}}
+
+{{ govukButton({
+    text: "Continue",
+    href: "seller-receives-offer"
+}) }}
+    
+{% endblock %}

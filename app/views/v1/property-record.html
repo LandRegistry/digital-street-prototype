@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Property record
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% if notification %}
+                {% if notification == 'registered' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                                Now we know that you’re the registered owner of this property you can:
+                                <ul class="govuk-list">
+                                    <li>
+                                        view the details HMLR hold on your property
+                                    </li>
+                                    <li>                                    
+                                        view and change the details HMLR hold about you
+                                    </li>
+                                    <li>
+                                        put your property on the market
+                                    </li>
+                                    <li>
+                                        share your property record with others, for example your solicitor
+                                    </li>
+                                </ul>
+                            <a class="govuk-link" href='/v1/seller-pre-contract-enquiries'>Put property on the market</a>
+                        </p>
+                    </div>
+
+                {% elseif notification == 'information' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You can now share your property record with a certified solicitor to act on your behalf<br>
+                            <a class="govuk-link" href='/v1/seller-delegate-access'>Share property record</a>
+                        </p>
+                    </div>
+                {% elseif notification == 'valuation' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You've received a valuation for 1 Digital Street<br>
+                            <a class="govuk-button"href='#current-valuation'>Review this valuation</a>
+                        </p>
+                    </div>
+                {% elseif notification == 'offer' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You've received an offer for 1 Digital Street<br>
+                            <a class="govuk-link" href='/v1/seller-review-offer'>Review this offer</a>
+                        </p>
+                    </div>
+                {% elseif notification == 'offer_accepted' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            You can now sign your sales contract<br>
+                            <a href='/v1/seller-agree-to-sell'>View sales contract</a>
+                        </p>
+                    </div>
+                {% elseif notification == 'draft_contract' %}
+                    <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            Good news!
+                        </h2>
+                        <p class="govuk-body">
+                            Your solicitor has drafted a sales contract and added it to your logbook<br>
+                            <a href='/v1/seller-draft-sales-contract'>View draft contract</a>
+                        </p>
+                    </div>
+                {% endif %}
+            {% endif %}
+            
+            <h1 class="govuk-heading-xl">
+                1 Digital Street<br>Bristol<br>BS2 8EN</h1>
+            </h1>
+            <p class="govuk-body">
+                {% if role %}
+                    {% if ['owner', 'seller'].includes(role) %}
+                        {% if sold %}
+                            <strong>Current owner: </strong>Mr David Jones<br><br>
+                        {% else %}
+                            <strong>Current owner: </strong>Mrs Lisa White<br><br>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                <strong>Title number: </strong>DS1239B<br><br>
+                <strong>Tenure type: </strong>Freehold<br><br>
+                {% if role == 'owner' %}
+                <strong>Class of title: </strong>Absolute<br><br>
+                {% endif %}
+
+                <strong>Property description:</strong><br>
+                4 bedroom house with garden and private garage.<br><br>
+
+                {% if ['owner', 'seller'].includes(role) %}
+                    <strong>Contact details:</strong><br>
+                    Lisa White<br>
+                    1 Digital Street<br>
+                    Bristol<br>
+                    BS2 8EN<br>
+                    lisawhite@gmail.com
+                {% endif %}
+            </p>
+
+            {% if offer and role == 'seller' %}
+                {% if offer_accepted %}
+                    {{ govukWarningText({
+                        text: "Offer of " + offer + " accepted by you on 5 September 2018   ",
+                        iconFallbackText: "Warning"
+                    }) }}
+                {% elseif notification == 'offer' %}
+                    {{ govukWarningText({
+                        text: "Offer received for £250,000 on 28 August 2018",
+                        iconFallbackText: "Warning"
+                    }) }}
+                {% else %}
+                    <p class="govuk-body">
+                        <strong>Current offer:</strong><br>
+                        Offer received for £250,000 on 28 August 2018</p>
+                {% endif %}
+            {% endif %}
+
+            {% if valuation and role == 'seller' %}
+                {% if notification == 'valuation' %}
+                    <div class="govuk-inset-text">
+                        <strong>Current valuation:</strong><br>
+                        {{ valuation.price }}<br>
+                        {{ valuation.valuer }}<br>
+                        {{ valuation.date }}<br>
+                    </div>
+                {% else %}
+                    <p class="govuk-body">
+                        <strong>Current valuation:</strong><br>
+                        {{ valuation.price }}<br>
+                        {{ valuation.valuer }}<br>
+                        {{ valuation.date }}<br>
+                    </p>
+                {% endif %}
+            {% endif %}
+                  
+            <table class="govuk-table">
+                <caption class="govuk-table__caption">Price history</caption>                
+                <tbody class="govuk-table__body">
+                    {% if sold %} 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£250,000</td>
+                        <td class="govuk-table__cell">Sold</td>
+                        <td class="govuk-table__cell">17 August 2018</td>
+                    </tr>
+                    {% endif %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£210,000</td>
+                        <td class="govuk-table__cell">Sold</td>
+                        <td class="govuk-table__cell">17 June 2017</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£160,000</td>
+                        <td class="govuk-table__cell">Sold</td>
+                        <td class="govuk-table__cell">16 May 2006</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">£125,000</th>
+                        <td class="govuk-table__cell">Sold</td>
+                        <td class="govuk-table__cell">16 August 2001</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="govuk-heading-l">Things that affect this property</h2>
+            <p class="govuk-body"><strong>This property:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>sits within an urban development area <a class="govuk-link" href="#">(source)</a></li>
+                <li>is subject to hedgerow notices <a class="govuk-link" href="#">(source)</a></li>
+            </ul>
+            <p class="govuk-body"><strong>You can't:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">    
+                <li>mine this land <a class="govuk-link" href="#">(source)</a></li>
+                <li>build a factory <a class="govuk-link" href="#">(source)</a></li>
+                <li>use this land for a business <a class="govuk-link" href="#">(source)</a></li>
+                <li>build on the south side of the property <a class="govuk-link" href="#">(source)</a></li>
+            </ul>                
+            <p class="govuk-body"><strong>You can:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>use the path at the end of 2 Digital Street to access your property <a class="govuk-link" href="#">(source)</a></li>
+            </ul>
+            <p class="govuk-body"><strong>Other people can use your land. The:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>local church can charge a regular maintenance fee <a class="govuk-link" href="#">(source)</a></li>
+                <li>owners of 2 Digital Street can use the path at the back of their land but must contribute to its maintenance costs <a class="govuk-link" href="#">(source)</a></li>
+                <li><a href="#">Southwest Water</a> can access your garden to access the drainage system at the end of your property <a class="govuk-link" href="#">(source)</a></li>
+            </ul>
+            </ul>            
+            <!-- {% if not role %}
+                {{ govukButton({
+                    text: "I own this property",
+                    href: "identify-sign-in"
+                }) }}
+            {% elseif ['owner', 'seller'].includes(role) %}
+                {% if role == 'owner' %}
+                    {{ govukButton({
+                        text: "Sell this property",
+                        href: "seller-pre-contract-enquiries1"
+                    }) }}
+                {% elseif role == 'seller' %}
+                    {% if offer_accepted %} 
+                        {{ govukButton({
+                            text: "Review sales contract",
+                            href: "seller-agree-to-sell"
+                        }) }}
+                    {% elseif notification == 'offer' %} 
+                        {{ govukButton({
+                            text: "Respond to offer",
+                            href: "seller-review-offer"
+                        }) }}
+                    {% elseif surveyor_report %}
+                        {{ govukButton({
+                            text: "Wait for offer",
+                            href: "seller-receives-offer"
+                        }) }}
+                    {% else %}
+                        {{ govukButton({
+                            text: "Allow access to my record",
+                            href: "seller-delegate-access"
+                        }) }}
+                    {% endif %}
+                {% endif %}
+            {% endif %} -->
+            {% if not role %}
+                {{ govukButton({
+                    text: "Prove ownership",
+                    href: "identify-sign-in"
+                }) }}
+            {% endif %}
+            <p class="govuk-body"><a href="#">Download a legal copy of this information</a></p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+            <div class="img-section">
+                <img src="/public/images/map-view.png" alt="An image of the property's boundary">
+                <p class="govuk-body-s">Boundary of the property.</p>
+            </div>
+            {% if ['owner', 'seller'].includes(role) %}
+                <p class="govuk-body"><strong>HMLR documents:</strong><br>
+                    <a href="#">Official copy of the register</a><br>
+                    <a href="#">Title plan</a>
+                </p>
+                <p class="govuk-body"><strong>Your documents:</strong><br>
+                    <a href="#">Mortgage deed</a><br>
+                    {% if role == 'seller' %}
+                        <a href="#">Gas certificate</a><br>
+                        <a href="#">Renovations information</a><br>
+                        <a href="#">Planning restrictions</a><br>
+                        {% if surveyor_report %}
+                            <a href="#">Surveyor report</a><br>
+                        {% endif %}
+                        {% if role == 'seller' %}
+                            <a href="#">Pre-sale property contract</a>
+                        {% endif %}
+                    {% endif %}
+                </p>
+                <p class="govuk-body"><strong>Things you can do:</strong><br>
+                    <a href="#">Change your details</a><br>
+                    <!-- <a href="#">Change your contact details</a><br> -->
+                    <a href="#">Upload documents</a></br>
+                    <a href="#">Gift this property</a><br>
+                    <a href="/v1/">Sell this property</a><br>
+                    <!-- <a href="#">Sell part of this property</a></br>
+                    <a href="#">Gift part of this property</a></br> -->
+                </p>
+                <p class="govuk-body">View your local authority <a href="#">searches document</a> or <a href="#">view on a map</a></p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

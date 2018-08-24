@@ -1,0 +1,66 @@
+{% extends "generic-layout.html" %}
+
+{% block pageStyles %}
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-Qt9Hug5NfnQDGMoaQYXN1+PiQvda7poO7/5k4qAmMN6evu0oDFMJTyjqaoTGHdqf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="/public/stylesheets/generic.css">
+{% endblock %}
+
+{% block pageTitle %}
+    Sales contract
+{% endblock %}
+
+{% block navbar %}
+{% include 'includes/conveyit_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Sales contract</h1><br>
+
+<div class="row" style="margin-bottom: 50px;">
+  <div class="col-8">
+    <p class="lead">If you're happy with the sales contract, then you can invite the buyer's solicitor to view the contract.</p>
+
+    <section class="contract-section">
+      <h2>Sales contract</h2><br>
+
+      <h3>Property (freehold):</h3>
+      <p>
+        1 Digital Street, <br>
+        Bristol, <br>
+        BS2 8EN
+      </p>
+
+      <h3>Title number:</h3>
+      <p>DS1239B</p>
+
+      <h3>Title guarantee:</h3>
+      <p>Full</p>
+
+      <h3>Tenure type:</h3>
+      <p>Freehold</p>
+
+      <h3>Price agreed:</h3>
+      <p>£250,000</p>
+
+      <h3>Seller:</h3>
+      <p><strong>Lisa White</strong><br>
+        1 Digital Street, <br>
+        Bristol, <br>
+        BS2 8EN
+      </p>
+
+      <h3>Buyer:</h3>
+      <p><strong>David Jones</strong><br>
+        13 Friary Lane, <br>
+        Poole, <br>
+        BH12 3FD
+      </p>
+
+      <small><strong>HM Land Registry internal reference number: </strong>E-A12788</small>
+    </section>
+    <a class="btn btn-primary" href="/v1/seller-delegate-access">Agree and invite</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "generic-layout.html" %}
+
+{% block pageStyles %}
+<!-- Custom page styles go here -->
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-3Ivskwia8Fui5tbQi+RW4DgTkJ8d+hW7mLe7Yk89ibmD9482VECh0WFof8kIEjwI" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}
+    Sign in with Identify
+{% endblock %}
+
+{% block navbar %}
+{% include 'includes/identify_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<section class="jumbotron">
+    <div class="container">
+        <h1>Sign in with Identify</h1>
+        <form>
+            <div class="form-check">
+                <input class="form-check-input radio-btn" type="radio" name="used-before" id="used-before-no" value="no" checked>
+                <label class="form-check-label" for="used-before-no">
+                    This is my first time using Identify
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio-btn" type="radio" name="used-before" id="used-before-yes" value="yes">
+                <label class="form-check-label" for="used-before-yes">
+                    I've used Identify before
+                </label>
+            </div>
+            <br>
+            <a class="btn btn-primary" href="{{nextURL}}">Continue</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
