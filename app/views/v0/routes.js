@@ -49,12 +49,12 @@ router.get('/property-logbook', function(req, res) {
 
 router.get('/identify-sign-in', function(req, res) {
     const lastURL = req.headers.referer
-    const nextURL = 'seller-land-registry-checks'
+    var nextURL = 'seller-land-registry-checks'
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
-        if (lastEndpoint == 'buyer-make-an-offer') {
+        if (lastEndpoint == 'buyer-marketplace') {
             nextURL = 'buyer-verify-agreement-in-principle'
-        } 
+        }
     }
     res.render(path.resolve(__dirname, './identify-sign-in.html'), { nextURL: nextURL })
 })
