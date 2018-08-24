@@ -24,7 +24,10 @@
             BS2 8EN
         </address>
         <p>to be transferred into my name</p>
-        <p><a class="btn btn-success btn-lg" href="buyer-agree-to-buy" role="button"><i class="fas fa-check fa-fw fa-lg"></i> Continue</a></p>
+        <form action="buyer-agree-to-buy" method="post">
+            <input type="hidden" name="transfer_ownership" id="transfer_ownership" value="true">
+            <button class="btn btn-success btn-lg" type="submit"><i class="fas fa-check fa-fw fa-lg"></i> Agree</button>
+        </form>
         <p><a href="#">View full transfer deed</a></p>
     </div>
 </div>

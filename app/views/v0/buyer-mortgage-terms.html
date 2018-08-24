@@ -33,7 +33,10 @@
             Bristol<br>
             BS2 8EN
         </address>
-        <p><a class="btn btn-success btn-lg" href="buyer-agree-to-buy" role="button"><i class="fas fa-check fa-fw fa-lg"></i> Continue</a></p>
+        <form action="buyer-agree-to-buy" method="post">
+            <input type="hidden" name="mortgage_terms" id="mortgage_terms" value="true">
+            <button class="btn btn-success btn-lg" type="submit"><i class="fas fa-check fa-fw fa-lg"></i> Agree</button>
+        </form>
         <p><a href="#">View full mortgage deed</a></p>
     </div>
 </div>

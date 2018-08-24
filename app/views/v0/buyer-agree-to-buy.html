@@ -21,20 +21,33 @@
 <div class="row">
     <div class="col-lg-8">
         <ul class="fa-ul lead">
-            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to my <a href="buyer-sales-contract">sales contract</a>.</p></li>
-            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to my <a href="buyer-mortgage-terms">mortgage terms</a>.</p></li>
-            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to the <a href="buyer-transfer-ownership">transfer of ownership</a>.</p></li>
-        </ul>
-        <ul class="fa-ul lead">
+            {% if data['sales_contract'] %}
             <li><span class="fa-li"><i class="far fa-check-square fa-lg text-success"></i></span><p>I agree to my <a href="buyer-sales-contract">sales contract</a>.</p></li>
+            {% else %}
+            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to my <a href="buyer-sales-contract">sales contract</a>.</p></li>
+            {% endif %}
+
+            {% if data['mortgage_terms'] %}
             <li><span class="fa-li"><i class="far fa-check-square fa-lg text-success"></i></span><p>I agree to my <a href="buyer-mortgage-terms">mortgage terms</a>.</p></li>
+            {% else %}
+            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to my <a href="buyer-mortgage-terms">mortgage terms</a>.</p></li>
+            {% endif %}
+
+            {% if data['transfer_ownership'] %}
             <li><span class="fa-li"><i class="far fa-check-square fa-lg text-success"></i></span><p>I agree to the <a href="buyer-transfer-ownership">transfer of ownership</a>.</p></li>
+            {% else %}
+            <li><span class="fa-li"><i class="far fa-square fa-lg"></i></span><p>I agree to the <a href="buyer-transfer-ownership">transfer of ownership</a>.</p></li>
+            {% endif %}
         </ul>
     </div>
 </div>
 <div class="row">
     <div class="col">
-        <br><h1><a href="buyer-bought-confirmation"><i class="fas fa-fingerprint fa-fw fa-3x"></i></a></h1>
+        {% if data['sales_contract'] and data['mortgage_terms'] and data['transfer_ownership'] %}
+        <br><h1><a href="buyer-bought-confirmation"><i class="fas fa-fingerprint fa-fw fa-3x text-success"></i></a></h1>
+        {% else %}
+        <br><h1><i class="fas fa-fingerprint fa-fw fa-3x text-secondary"></i></h1>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -30,7 +30,10 @@
             BS2 8EN
         </address>
         <p>for <strong>£250,000</strong></p>
-        <p><a class="btn btn-success btn-lg" href="buyer-agree-to-buy" role="button"><i class="fas fa-check fa-fw fa-lg"></i> Continue</a></p>
+        <form action="buyer-agree-to-buy" method="post">
+            <input type="hidden" name="sales_contract" id="sales_contract" value="true">
+            <button class="btn btn-success btn-lg" type="submit"><i class="fas fa-check fa-fw fa-lg"></i> Agree</button>
+        </form>
         <p><a href="#">View full sales contract</a></p>
     </div>
 </div>
