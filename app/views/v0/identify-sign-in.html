@@ -14,10 +14,11 @@
 {% endblock %}
 
 {% block content %}
-<section class="jumbotron">
-    <div class="container">
-        <h1>Sign in with Identify</h1>
-        <form>
+<div class="jumbotron">
+    <h1 class="display-4">Sign in with Identify</h1>
+    <hr>
+    <form>
+        <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input radio-btn" type="radio" name="used-before" id="used-before-no" value="no" checked>
                 <label class="form-check-label" for="used-before-no">
@@ -30,9 +31,8 @@
                     I've used Identify before
                 </label>
             </div>
-            <br>
-            <a class="btn btn-primary" href="{{nextURL}}">Continue</a>
-        </form>
-    </div>
-</section>
+        </div>
+    </form>
+    <a class="btn btn-primary btn-lg" href="{{nextURL}}" role="button">Continue</a>
+</div>
 {% endblock %}
