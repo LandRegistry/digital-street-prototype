@@ -41,7 +41,7 @@ router.get('/property-record', function(req, res) {
     res.render(path.resolve(__dirname, './property-record.html'), 
         { 
             notification: notification,
-            // notification: "offer", 
+            // notification: "registered", 
             offer: req.session.offer,
             // offer: "£250,000",
             offer_accepted: req.session.offer_accepted,
