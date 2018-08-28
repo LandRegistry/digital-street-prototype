@@ -18,20 +18,22 @@ router.get('/property-record', function(req, res) {
         } else if (lastEndpoint == 'seller-pre-contract-enquiries') {
             req.session.role = 'seller'
             notification = 'information'
-        } else if (lastEndpoint == 'seller-estate-agent-adds-valuation') {
+        } else if (lastEndpoint == 'seller-notify-valuation') {
             notification = 'valuation'
             req.session.valuation = {
                 "price": "£250,000",
                 "valuer": "Movr",
                 "date": "25 July 2018"
             }
-        } else if (lastEndpoint == 'seller-solicitor-drafts-contract') { 
-            notification = 'draft_contract'
-        } else if (lastEndpoint == 'seller-receives-offer') {
+        } else if (lastEndpoint == 'seller-notify-offer') {
             req.session.offer = "£250,000"
             notification = 'offer'
         } else if (lastEndpoint == 'seller-review-offer') {
             req.session.offer_accepted = new Date().toLocaleDateString('en-GB')
+            notification = 'offer_accepted'
+        } else if (lastEndpoint == 'seller-notify-review-contract') { 
+            notification = 'draft_contract'
+        } else if (lastEndpoint == 'seller-notify-sign-contracts') { 
             notification = 'sales_contract'
         } else if (lastEndpoint == 'seller-sale-confirmation') {            
             req.session.role = ''
@@ -41,7 +43,7 @@ router.get('/property-record', function(req, res) {
     res.render(path.resolve(__dirname, './property-record.html'), 
         { 
             notification: notification,
-            // notification: "registered", 
+            // notification: "draft_accepted", 
             offer: req.session.offer,
             // offer: "£250,000",
             offer_accepted: req.session.offer_accepted,
@@ -125,6 +127,9 @@ router.get('/seller-upload-documents', function(req, res) {
     res.render(path.resolve(__dirname, './seller-upload-documents.html'), { role: req.session.role})
 })
 
+router.get('/notify', function(req, res) {
+
+})
 // Buyer routes below here...
 
 router.get('/buyer-marketplace', function(req, res) {

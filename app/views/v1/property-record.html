@@ -15,12 +15,12 @@
                     <p class="govuk-body">
                             Now we know that you’re the registered owner of this property you can:
                             <ul class="govuk-list govuk-list--bullet">
-                                <li>put your property on the market</li>
+                                <li>sell your property</li>
                                 <li>view the details HMLR hold on your property</li>
                                 <li>view and change the details HMLR hold about you</li>
                                 <li>share your property record with others, for example your solicitor</li>
                             </ul>
-                        <a class="govuk-button govuk-!-margin-bottom-1" href='/v1/seller-pre-contract-enquiries'>Sell this property</a>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-pre-contract-enquiries'>Sell this property</a>
                     </p>
                 </div>
 
@@ -30,8 +30,8 @@
                         Good news!
                     </h2>
                     <p class="govuk-body">
-                        You can now share your property record with a certified solicitor to act on your behalf<br>
-                        <a class="govuk-link" href='/v1/seller-delegate-access'>Share property record</a>
+                        You can now share your property record with a certified estate agent to act on your behalf<br>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-delegate-access'>Share property record</a>
                     </p>
                 </div>
             {% elseif notification == 'valuation' %}
@@ -41,7 +41,7 @@
                     </h2>
                     <p class="govuk-body">
                         You've received a valuation for 1 Digital Street<br>
-                        <a class="govuk-button" href='#current-valuation'>Review this valuation</a>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-review-valuation'>Review this valuation</a>
                     </p>
                 </div>
             {% elseif notification == 'offer' %}
@@ -51,7 +51,7 @@
                     </h2>
                     <p class="govuk-body">
                         You've received an offer for 1 Digital Street<br>
-                        <a class="govuk-link" href='/v1/seller-review-offer'>Review this offer</a>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-review-offer'>Review this offer</a>
                     </p>
                 </div>
             {% elseif notification == 'offer_accepted' %}
@@ -60,8 +60,8 @@
                         Good news!
                     </h2>
                     <p class="govuk-body">
-                        You can now sign your sales contract<br>
-                        <a href='/v1/seller-agree-to-sell'>View sales contract</a>
+                        Now you've accepted an offer for your property, you can share your property record with your solicitor.<br>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-delegate-access'>Share property record</a>
                     </p>
                 </div>
             {% elseif notification == 'draft_contract' %}
@@ -70,8 +70,18 @@
                         Good news!
                     </h2>
                     <p class="govuk-body">
-                        Your solicitor has drafted a sales contract and added it to your logbook<br>
-                        <a href='/v1/seller-draft-sales-contract'>View draft contract</a>
+                        Your draft sales contract is ready for review<br>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-draft-sales-contract'>Review draft contract</a>
+                    </p>
+                </div>
+            {% elseif notification == 'sales_contract' %}
+                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">
+                        Good news!
+                    </h2>
+                    <p class="govuk-body">
+                        You can now sign your sales contract and transfer of ownership<br>
+                        <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-agree-to-sell'>Sign contracts</a>
                     </p>
                 </div>
             {% endif %}
