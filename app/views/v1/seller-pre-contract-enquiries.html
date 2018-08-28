@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Additional property information
+{% endblock %}
+
+{% block content %}
+
+
+
+<h1 class="govuk-heading-xl">Additional property information</h1>
+{{ govukInsetText({
+    text: "Before you sell your property you may want to upload your pre-contract information.
+    Having this information upfront will speed up the sale of your property."
+}) }}
+
+{% set disputesHtml %}
+{{ govukInput({
+  id: "disputes",
+  name: "disputes",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "More details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "alterations",
+  name: "alterations",
+  fieldset: {
+    legend: {
+      text: "Have you made any alterations to your property?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes" 
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+})
+}}
+
+{{ govukRadios({
+  idPrefix: "obligations",
+  name: "obligations",
+  fieldset: {
+    legend: {
+      text: "Do you have any obligations to contribute to repairing or maintaining other land?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes" 
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+})
+}}
+
+{{ govukRadios({
+  idPrefix: "disputes",
+  name: "disputes-conditional",
+  fieldset: {
+    legend: {
+      text: "Have you had any disputes with your neighbours?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: disputesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+})
+}}
+
+{{ govukButton({
+    text: "Continue",
+    href: "property-record"
+}) }}
+
+<p class="govuk-body">
+    <a href="/v1/property-record" class="govuk-link">Skip this step</a>
+</p>
+    
+{% endblock %}

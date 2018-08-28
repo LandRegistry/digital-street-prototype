@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+
+  {% if role %}
+    {% if ['seller', 'owner'].includes(role) %}
+      {% include "includes/account_bar.html" %}
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Sell land or property</h1>
+
+      <p class="govuk-body">Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>confirm that you own the land or property you want to sell</li>
+        <li>view information HMLR hold on your land or property</li>
+        <li>give access to others involved in your sale including your:</li>
+        <ul class="govuk-list">
+            <li>- estate agent</li>
+            <li>- solicitor</li>
+            <li>- bank</li>
+        </ul>
+      </ul>
+
+      <p class="govuk-body">Registering takes around 5 minutes.</p>
+
+      
+      <h2 class="govuk-heading-m">Before you start</h2>
+      
+      <p class="govuk-body">You'll need to sign in with Identify to use this service. <br>
+          If you haven't used Identify before, it'll take about 15 minutes to set up an account.
+      </p>
+      
+      <div class="govuk-inset-text">
+          We'll retain and may share your personal details for fraud prevention and detection purposes. We may also carry out third party checks in relation to the information supplied. For further information please view our <a class="govuk-link" href="#">personal information charter</a>.
+      </div>
+      
+        {{ govukButton({
+        text: "Start now",
+        href: "seller-search-the-land-register",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+        }) }}
+    </div>
+  </div>
+{% endblock %}

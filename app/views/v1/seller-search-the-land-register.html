@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Search for a property
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "seller-start-page"    
+  }) }}
+{% endblock %}
+
+{% block content %}
+    {% call govukFieldset({
+        legend: {
+            text: "Search the land register",
+            classes: "govuk-fieldset__legend--xl",
+            isPageHeading: true
+        }
+    }) %}
+
+    {{ govukInput({
+        hint: {
+            text: "Enter a title number, postcode, address or proprietor"
+        },
+        classes: "govuk-input--width-20",
+        id: "postcode",
+        name: "postcode",
+        value: "BS2 8EN"
+    }) }}
+
+    {{ govukButton({
+        text: "Continue",
+        href: "seller-search-results"
+    }) }}
+
+    {% endcall %}
+{% endblock %}
