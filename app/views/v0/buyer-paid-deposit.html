@@ -2,20 +2,24 @@
 
 {% block pageStyles %}
 <!-- Custom page styles go here -->
-<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-J7kOMHmyCHLNgMkMNyYuEvEZfdApW59rmw1I94S42EBym3qwLozQi2LGSOzIDRWW" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-5C8TGNupopdjruopVTTrVJacBbWqxHK9eis5DB+DYE6RfqIJapdLBRUdaZBTq7mE" crossorigin="anonymous">
 {% endblock %}
 
-{% block pageTitle %}Paid deposit | MovR{% endblock %}
+{% block pageTitle %}Deposit paid | QuickBuy!{% endblock %}
 
 {% block navbar %}
-{% include 'includes/movr_navbar.html' %}
+{% include 'includes/quickbuy_navbar.html' %}
 {% endblock %}
 
 {% block content %}
 <!-- Main content goes here -->
 <div class="row">
     <div class="col">
-        <br><h1 class="text-center">You've paid your deposit for 1 Digital Street<br><i class="fas fa-check fa-fw fa-6x text-success"></i></h1>
+        <div class="jumbotron">
+            <h1 class="display-4">You have paid the deposit for 1 Digital Street</h1>
+            <hr>
+            <a class="btn btn-primary btn-lg" href="buyer-agree-to-buy" role="button">Continue <i class="fas fa-chevron-right"></i></a>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -15,13 +15,13 @@
 <!-- Main content goes here -->
 <div class="row">
     <div class="col">
-        <br><h1>Make an offer for 1 Digital Street</h1>
+        <br><h1>Make an offer for 1 Digital Street<br>
+        <small class="text-muted">This information is pre-filled from your verified details:</small></h1>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-6">
         <form action="buyer-confirm-offer" method="post">
-            <legend>This information is pre-filled from your verified details:</legend>
             <div class="form-group">
                 <label for="buyerName">Buyer name</label>
                 <input type="text" readonly class="form-control" id="buyerName" value="{{ data['buyerName'] }}">
