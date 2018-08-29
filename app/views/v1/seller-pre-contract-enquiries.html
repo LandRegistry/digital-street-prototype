@@ -10,16 +10,14 @@
 
 <h1 class="govuk-heading-xl">Additional property information</h1>
 {{ govukInsetText({
-    text: "Before you sell your property you may want to upload your pre-contract information.
-    Having this information upfront will speed up the sale of your property."
+    text: "Before you can sell this property, we require more information. Having this information in advance will speed up the process."
 }) }}
 
-{% set disputesHtml %}
-{{ govukInput({
-  id: "disputes",
-  name: "disputes",
-  type: "email",
-  classes: "govuk-!-width-one-third",
+{% set moreDetailsHtml %}
+{{ govukTextarea({
+  id: "details",
+  name: "details",
+  classes: "govuk-!-width-two-thirds",
   label: {
     text: "More details"
   }
@@ -39,7 +37,10 @@
   items: [
     {
       value: "yes",
-      text: "Yes" 
+      text: "Yes",
+      conditional: {
+        html: moreDetailsHtml
+      }
     },
     {
       value: "no",
@@ -62,7 +63,10 @@
   items: [
     {
       value: "yes",
-      text: "Yes" 
+      text: "Yes",
+      conditional: {
+        html: moreDetailsHtml
+      }
     },
     {
       value: "no",
@@ -87,7 +91,7 @@
       value: "yes",
       text: "Yes",
       conditional: {
-        html: disputesHtml
+        html: moreDetailsHtml
       }
     },
     {
@@ -102,9 +106,5 @@
     text: "Continue",
     href: "property-record"
 }) }}
-
-<p class="govuk-body">
-    <a href="/v1/property-record" class="govuk-link">Skip this step</a>
-</p>
     
 {% endblock %}

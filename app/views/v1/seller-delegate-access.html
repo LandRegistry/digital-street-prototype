@@ -10,29 +10,37 @@
         <h1 class="govuk-heading-xl">Share your property record</h1>
         <p class="govuk-body">
             By sharing your property record you’re allowing someone to act on your behalf. You’ll need to provide some details about the person you’re sharing your record with. 
-        </div>
+        </p>
     </div>
+</div>
     <form action="/v1/delegate-access" method="post">
     
-        {{ govukInput({
-            label: {
-                text: "Full name"
-            },
-            classes: "govuk-input--width-20",
-            id: "delegate-name",
-            name: "delegate-name"
-        }) }}
+        <div class="govuk-form-group">
+                <label class="govuk-label" for="delegate-name">
+                  Full name
+                </label>
+            {% if selected_type == 'estate_agent' %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-name" name="delegate-name" type="text" value="Martin Edwards">
+            {% elseif selected_type == 'seller_solicitor' %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-name" name="delegate-name" type="text" value="Natasha Powell">
+            {% else %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-name" name="delegate-name" type="text" value="">
+            {% endif %}
+        </div>
+
+        <div class="govuk-form-group">
+                <label class="govuk-label" for="delegate-email">
+                  Email address
+                </label>
+            {% if selected_type == 'estate_agent' %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-email" name="delegate-email" type="text" value="martin@movr.com">
+            {% elseif selected_type == 'seller_solicitor' %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-email" name="delegate-email" type="text" value="natashapowell@conveyit.com">
+            {% else %}
+                <input class="govuk-input govuk-input--width-20" id="delegate-email" name="delegate-email" type="text" value="">
+            {% endif %}
+        </div>
         
-        {{ govukInput({
-            label: {
-                text: "Email address"
-            },
-            classes: "govuk-input--width-20",
-            id: "delegate-email",
-            name: "delegate-email"
-        }) }}
-        
-        </p>
         <div class="govuk-form-group">
             <label class="govuk-label" for="delegate-type">
             Role
@@ -43,7 +51,7 @@
                 <option value="seller_bank">My bank</option>
                 <option value="other">Other</option>
             </select>
-    </div>
+        </div>
 
     {{ govukButton({
         text: "Share property record"

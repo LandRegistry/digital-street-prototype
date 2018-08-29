@@ -35,18 +35,21 @@
     <fieldset>
         <legend>Would you like to accept this offer?</legend>
         <div class="form-group">
-            <div class="custom-control custom-radio">
-                <input type="radio" id="accept-offer-yes" name="accept-offer" class="custom-control-input" checked="">
-                <label class="custom-control-label" for="accept-offer-yes">Yes</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="accept-offer-no" name="accept-offer" class="custom-control-input">
-                <label class="custom-control-label" for="accept-offer-no">No</label>
-            </div>
+            <label class="radio-inline" for="accept-offer-yes" style="margin-right: 10px; font-size: 16px;">
+                <input type="radio" id="accept-offer-yes" name="accept-offer" checked="" style="margin-right: 5px;">
+                Yes
+            </label>
+            <label class="radio-inline" for="accept-offer-no" style="margin-right: 10px; font-size: 16px;">
+                <input type="radio" id="accept-offer-no" name="accept-offer" style="margin-right: 5px;">
+                No
+            </label>
         </div>
     </fieldset>
 
-    <a class="btn btn-primary" href="/v1/property-record">Continue</a>
+    <p>
+        <span><i class="fas fa-exclamation-circle fa-lg"></i></span> By accepting this offer, you are entering into a legally binding contract.
+    </p>
+    <a class="btn btn-primary" href="/v1/property-record">Confirm</a>
   </div>
 </div>
 

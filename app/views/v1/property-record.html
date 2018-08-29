@@ -30,7 +30,7 @@
                         Good news!
                     </h2>
                     <p class="govuk-body">
-                        You can now share your property record with a certified estate agent to act on your behalf<br>
+                        You can now share this property record with a certified estate agent to act on your behalf<br>
                         <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-1" href='/v1/seller-delegate-access'>Share property record</a>
                     </p>
                 </div>
@@ -164,18 +164,28 @@
             {% if valuation and role == 'seller' %}
                 {% if notification == 'valuation' %}
                     <div class="govuk-inset-text">
-                        <strong>Current valuation:</strong><br>
-                        {{ valuation.price }}<br>
-                        {{ valuation.valuer }}<br>
-                        {{ valuation.date }}<br>
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Current valuation</caption> 
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">{{ valuation.price }}</td>
+                                    <td class="govuk-table__cell">{{ valuation.valuer }}</td>
+                                    <td class="govuk-table__cell">{{ valuation.date }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 {% else %}
-                    <p class="govuk-body">
-                        <strong>Current valuation:</strong><br>
-                        {{ valuation.price }}<br>
-                        {{ valuation.valuer }}<br>
-                        {{ valuation.date }}<br>
-                    </p>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption">Current valuation</caption> 
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">{{ valuation.price }}</td>
+                                <td class="govuk-table__cell">{{ valuation.valuer }}</td>
+                                <td class="govuk-table__cell">{{ valuation.date }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 {% endif %}
             {% endif %}
                   

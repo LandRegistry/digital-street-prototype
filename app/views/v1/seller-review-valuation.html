@@ -13,10 +13,21 @@
     text: "By accepting this valuation you agree to put your property on the market at this price"
 }) }}
 
+{% set moreDetailsHtml %}
+{{ govukTextarea({
+  id: "details",
+  name: "details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "More details"
+  }
+}) }}
+{% endset -%}
+
+
 {{ govukRadios({
-  classes: "govuk-radios--inline",
   idPrefix: "valuation",
-  name: "valiation",
+  name: "valuation",
   items: [
     {
       value: "yes",
@@ -24,7 +35,10 @@
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      conditional: {
+        html: moreDetailsHtml
+      }
     }
   ]
 })
