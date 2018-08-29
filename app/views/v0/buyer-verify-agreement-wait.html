@@ -15,18 +15,17 @@
 <!-- Main content goes here -->
 <div class="row">
     <div class="col">
-        <br><h1>Verify mortgage agreement in principle</h1>
+        <div class="jumbotron">
+            <h1 class="display-4"><i class="fas fa-spinner fa-spin"></i> We're verifying your agreement in principle...</h1>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-6">
-        <form action="buyer-verify-agreement-wait" action="post">
-            <div class="form-group">
-                <label for="reference">Reference number</label>
-                <input type="text" class="form-control" id="reference">
-            </div>
-            <button type="submit" class="btn btn-primary">Verify</button>
-        </form>
-    </div>
-</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    window.setTimeout(function(){
+        window.location.replace("/v0/buyer-make-an-offer");
+    }, 5000);
+</script>
 {% endblock %}
