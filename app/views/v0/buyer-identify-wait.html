@@ -1,0 +1,33 @@
+{% extends "generic-layout.html" %}
+
+{% block pageStyles %}
+<!-- Custom page styles go here -->
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-3Ivskwia8Fui5tbQi+RW4DgTkJ8d+hW7mLe7Yk89ibmD9482VECh0WFof8kIEjwI" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}
+    Sign in with Identify
+{% endblock %}
+
+{% block navbar %}
+{% include 'includes/identify_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<!-- Main content goes here -->
+<div class="row">
+    <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-4"><i class="fas fa-spinner fa-spin"></i> We're validating your identity...</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    window.setTimeout(function(){
+        window.location.replace("/v0/buyer-verify-agreement-in-principle");
+    }, 5000);
+</script>
+{% endblock %}
