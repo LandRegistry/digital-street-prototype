@@ -53,7 +53,7 @@ router.get('/identify-sign-in', function(req, res) {
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
         if (lastEndpoint == 'buyer-marketplace') {
-            nextURL = 'buyer-verify-agreement-in-principle'
+            nextURL = 'buyer-identify-wait'
         }
     }
     res.render(path.resolve(__dirname, './identify-sign-in.html'), { nextURL: nextURL })

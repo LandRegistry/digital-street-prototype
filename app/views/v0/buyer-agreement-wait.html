@@ -1,0 +1,31 @@
+{% extends "generic-layout.html" %}
+
+{% block pageStyles %}
+<!-- Custom page styles go here -->
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-MEq8xmFd953gp2FVvLd8DUEvfBjGCzDjem+gmDqfyyWcaxX4BUD7TtSu1EszNTvK" crossorigin="anonymous">
+{% endblock %}
+
+{% block pageTitle %}Checking eligibility | NatWesteros{% endblock %}
+
+{% block navbar %}
+{% include 'includes/natwesteros_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<!-- Main content goes here -->
+<div class="row">
+    <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-4"><i class="fas fa-spinner fa-spin"></i> We're checking your eligibility...</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    window.setTimeout(function(){
+        window.location.replace("/v0/buyer-confirm-agreement-in-principle");
+    }, 5000);
+</script>
+{% endblock %}
