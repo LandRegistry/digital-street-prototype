@@ -9,6 +9,13 @@ router.get('/foo', function(req, res) {
 
 router.get('/property-record', function(req, res) {
     const lastURL = req.headers.referer
+    const currentDate = new Date()
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    const today = {
+        day: currentDate.getDate(),
+        month: monthNames[currentDate.getMonth()],
+        year: currentDate.getFullYear() 
+    }
     let notification = ""
     if (lastURL) {
         const lastEndpoint = lastURL.substr(lastURL.lastIndexOf('/') + 1)
@@ -26,24 +33,34 @@ router.get('/property-record', function(req, res) {
                 "date": "25 July 2018"
             }
         } else if (lastEndpoint == 'seller-notify-offer') {
-            req.session.offer = "£250,000"
+            req.session.offer = {
+                amount: "£250,000",
+                day: today.day,
+                month: today.month,
+                year: today.year
+            }
             notification = 'offer'
         } else if (lastEndpoint == 'seller-review-offer') {
-            req.session.offer_accepted = new Date().toLocaleDateString('en-GB')
+            req.session.offer_accepted = today
             notification = 'offer_accepted'
         } else if (lastEndpoint == 'seller-notify-review-contract') { 
             notification = 'draft_contract'
         } else if (lastEndpoint == 'seller-notify-sign-contracts') { 
             notification = 'sales_contract'
-        } else if (lastEndpoint == 'seller-sale-confirmation') {            
+        } else if (lastEndpoint == 'seller-sale-confirmation') {
             req.session.role = ''
-            req.session.sold = true
+            req.session.sold = {
+                amount: req.session.offer.amount,
+                day: today.day,
+                month: today.month,
+                year: today.year
+            }
         } 
     }
     res.render(path.resolve(__dirname, './property-record.html'), 
         { 
             notification: notification,
-            // notification: "draft_accepted", 
+            // notification: "draft_contract", 
             offer: req.session.offer,
             // offer: "£250,000",
             offer_accepted: req.session.offer_accepted,

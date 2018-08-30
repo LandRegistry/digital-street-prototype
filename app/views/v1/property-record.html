@@ -8,7 +8,7 @@
     <div class="govuk-grid-row">
         {% if notification %}
             {% if notification == 'registered' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -25,7 +25,7 @@
                 </div>
 
             {% elseif notification == 'information' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -35,7 +35,7 @@
                     </p>
                 </div>
             {% elseif notification == 'valuation' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -45,7 +45,7 @@
                     </p>
                 </div>
             {% elseif notification == 'offer' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -55,7 +55,7 @@
                     </p>
                 </div>
             {% elseif notification == 'offer_accepted' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -65,7 +65,7 @@
                     </p>
                 </div>
             {% elseif notification == 'draft_contract' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -75,7 +75,7 @@
                     </p>
                 </div>
             {% elseif notification == 'sales_contract' %}
-                <div class="govuk-error-summary" style="border: 3px solid #005ea5" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                <div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
                     <h2 class="govuk-error-summary__title" id="error-summary-title">
                         Good news!
                     </h2>
@@ -86,28 +86,35 @@
                 </div>
             {% endif %}
         {% endif %}
-        <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
-                1 Digital Street<br>Bristol<br>BS2 8EN
-                <hr>
-            </h1>
-
-            <p class="govuk-body">
-            {% if sold %}
-                This register was last changed on <strong>17 August 2018</strong> at <strong>15:31:54</strong><br>
-            {% else %}
-                This register was last changed on <strong>17 June 2017</strong> at <strong>14:08:34</strong><br>
-            {% endif %}
-            {% if role == 'seller' %}
-                There’s a <strong>pending application</strong> on this title
-            {% endif %}
-            <hr>
-            </p>
-        </div>
-        <div class="govuk-grid-column-one-third">
-            <div class="img-section">
-                <img src="/public/images/map-view.png" alt="An image of the property's boundary">
-                <p class="govuk-body-s">Boundary of the property.</p>
+        <div class="title-summary">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+                        1 Digital Street<br>Bristol<br>BS2 8EN
+                        <hr>
+                    </h1>
+        
+                    <p class="govuk-body">
+                    {% if sold %}
+                        This register was last changed on <strong>17 August 2018</strong> at <strong>15:31:54</strong><br>
+                    {% else %}
+                        This register was last changed on <strong>17 June 2017</strong> at <strong>14:08:34</strong><br>
+                    {% endif %}
+                    {% if role == 'seller' %}
+                        <div class="pending-application">
+                            <p>
+                                There’s a <a href="#">pending application</a> on this title
+                            </p>
+                        </div>
+                    {% endif %}
+                    </p>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <div class="img-section">
+                        <img src="/public/images/map-view.png" alt="An image of the property's boundary">
+                        <p class="govuk-body-s">Boundary of the property.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -146,18 +153,18 @@
             {% if offer and role == 'seller' %}
                 {% if offer_accepted %}
                     {{ govukWarningText({
-                        text: "Offer of " + offer + " accepted by you on 5 September 2018   ",
+                        text: "Offer of " + offer.amount + " accepted by you on " + offer_accepted.day + " " + offer_accepted.month + " " + offer_accepted.year,
                         iconFallbackText: "Warning"
                     }) }}
                 {% elseif notification == 'offer' %}
                     {{ govukWarningText({
-                        text: "Offer received for £250,000 on 28 August 2018",
+                        text: "Offer received for " + offer.amount + " on " + offer.day + " " + offer.month + " " + offer.year,
                         iconFallbackText: "Warning"
                     }) }}
                 {% else %}
                     <p class="govuk-body">
                         <strong>Current offer:</strong><br>
-                        Offer received for £250,000 on 28 August 2018</p>
+                        Offer received for {{ offer.amount }} on {{ offer.day }} {{ offer.month }} {{ offer.year }}</p>
                 {% endif %}
             {% endif %}
 
@@ -196,7 +203,7 @@
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">£250,000</td>
                         <td class="govuk-table__cell">Sold</td>
-                        <td class="govuk-table__cell">17 August 2018</td>
+                        <td class="govuk-table__cell">{{ sold.day }} {{ sold.month }} {{ sold.year }}</td>
                     </tr>
                     {% endif %}
                     <tr class="govuk-table__row">
@@ -309,7 +316,7 @@
                     <!-- <a href="#">Change your contact details</a><br> -->
                     <a href="#">Upload documents</a></br>
                     <a href="#">Gift this property</a><br>
-                    <a href="/v1/">Sell this property</a><br>
+                    <a href="#">Sell this property</a><br>
                     <!-- <a href="#">Sell part of this property</a></br>
                     <a href="#">Gift part of this property</a></br> -->
                 </p>

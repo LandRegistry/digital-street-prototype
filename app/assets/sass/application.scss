@@ -18,7 +18,7 @@ $govuk-global-styles: true;
 }
 
 .img-section img {
-    border: 2px solid black;
+    border: 2px solid white;
     height: 250px;
 }
 
@@ -53,4 +53,42 @@ $govuk-global-styles: true;
         display: block;
         margin: 4px 0px 4px 20px;
     }
+}
+
+.title-summary {
+    margin: 0 0 30px 0;
+    padding: 40px 30px 15px 30px;
+    color: white !important; 
+    background-color: #005ea5;
+}
+
+.title-summary h1 {
+    color: white; 
+}
+
+.title-summary p {
+    color: white; 
+}
+
+.pending-application {
+    margin-top: 15px;
+    // padding-top: 15px;
+}
+
+.pending-application p {
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    color: #005ea5;
+    background-color: #ffffff;
+}
+
+.pending-application a {
+    margin: 0;
+    font-weight: 700;
+}
+
+.notification {
+    margin-bottom: 20px;
+    border: 3px solid #005ea5;
 }
