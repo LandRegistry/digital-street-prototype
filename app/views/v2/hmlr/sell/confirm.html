@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buyer HMLR{% endblock %}
+
+{% block head %}
+{{super()}}
+<style>
+	.text-center {
+		text-align: center;
+	}
+
+	.notification {
+		margin-bottom: 20px;
+		border: 3px solid #005ea5;
+	}
+</style>
+{% endblock %}
+
+{%set serviceName = "Sell land or property" %}
+{%set role = "seller" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Confirm transfer of ownership</h1>
+
+      {{ govukWarningText({
+	    	"html": "This step is legally binding.<br>If you have any questions- contact your solicitor.",
+	    	"iconFallbackText": "Warning"
+	    }) }}
+
+      <form action="#" method="post" novalidate="novalidate">
+        {{ govukCheckboxes({
+          "name": "agreement",
+          "items": [
+            {
+              "value": "agreed",
+              "html": "I agree to the <a class=\"govuk-link\" href=\"#\">transfer of ownership</a>"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          "text": "Confrim transfer",
+          "href": "transferring.html"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

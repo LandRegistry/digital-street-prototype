@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buyer HMLR{% endblock %}
+
+{% block pageStyles %}
+{{super()}}
+<style>
+	.text-center {
+		text-align: center;
+	}
+
+	.notification {
+		margin-bottom: 20px;
+		border: 3px solid #005ea5;
+	}
+</style>
+{% endblock %}
+
+{%set serviceName = "Buy land or property" %}
+{%set role = "owner" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+		  {{ govukPanel({
+			'titleText': "Your property transfer has been successful"
+		  }) }}
+	
+		  <h3 class="govuk-heading-m">What happens next</h3>
+		  <p class="govuk-body">
+			You can now view the <a class="govuk-link" href="#">updated title register</a>.
+		  </p>
+	
+		  <h3 class="govuk-heading-m">Questions?</h3>
+		  <p class="govuk-body">
+			If you have any questions about the next steps- contact your solicitor.
+		  </p>
+		</div>
+	  </div>
+{% endblock %}

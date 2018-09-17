@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buyer HMLR{% endblock %}
+
+{% block head %}
+{{super()}}
+<style>
+	.text-center {
+		text-align: center;
+	}
+
+	.notification {
+		margin-bottom: 20px;
+		border: 3px solid #005ea5;
+	}
+
+	.text-center{
+		text-align: center;
+	}
+</style>
+  <script type="text/javascript">
+    setTimeout(function(){ window.location = "success.html" }, 3000);
+  </script>
+{% endblock %}
+
+{%set serviceName = "Sell land or property" %}
+{%set role = "seller" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+		<div class="govuk-grid-column-full text-center">
+			<h1 class="govuk-heading-l">We're transferring the ownership of your property</h1>
+		<i class="fa fa-spinner fa-spin govuk-!-font-size-48"></i>
+		</div>
+	</div>
+{% endblock %}
