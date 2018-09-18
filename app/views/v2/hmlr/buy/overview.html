@@ -26,39 +26,40 @@
 {% block content %}
 <div class="govuk-grid-row">
 		<div class="govuk-grid-column-two-thirds">
-				{{ govukErrorSummary({
-					'titleText': "This component requires a title.",
-					'errorList': [
-						{
-							'text': "Now that you've exchanged contracts, your next step is to agree for the ownership of your new property to be transferred into your name."
-						}
-					],
-					'classes': "notification"
-				}) }}
+			<div class="govuk-error-summary notification" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+				<h2 class="govuk-error-summary__title" id="error-summary-title" style="display:none"></h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+							Now that you've exchanged contracts, your next step is to agree for the ownership of your new property to be transferred into your name.
+						</li>
+					</ul>
+				</div>
+			</div>
 				
-				<h1 class="govuk-heading-l">Transfer property ownership</h1>
-	
-				{{ govukWarningText({
-				"html": "Only continue if the following statement is correct.<br>If you have any questions- contact your solicitor.",
-				"iconFallbackText": "Warning"
-				}) }}
-	
-				<p class="govuk-body">
-					The ownership of:
-				</p>
-				<p class="govuk-body">
-						1 Digital Street,<br>
-						Bristol,<br>
-						BS2 8EN
-				</p>
-				<p class="govuk-body">
-					will be transfered to <b>David Jones</b>
-				</p>
-	
-				{{ govukButton({
-					"text": "Continue",
-					"href": "confirm.html"
-				}) }}
+			<h1 class="govuk-heading-l">Transfer property ownership</h1>
+
+			{{ govukWarningText({
+			"html": "Only continue if the following statement is correct.<br>If you have any questions - contact your solicitor.",
+			"iconFallbackText": "Warning"
+			}) }}
+
+			<p class="govuk-body">
+				The ownership of:
+			</p>
+			<p class="govuk-body">
+					1 Digital Street,<br>
+					Bristol,<br>
+					BS2 8EN
+			</p>
+			<p class="govuk-body">
+				will be transfered to <b>David Jones</b>
+			</p>
+
+			{{ govukButton({
+				"text": "Continue",
+				"href": "confirm.html"
+			}) }}
 		</div>
 	  </div>
 {% endblock %}
