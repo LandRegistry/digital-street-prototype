@@ -3,16 +3,27 @@
 {% block pageTitle %}Buyer Conveyancer{% endblock %}
 
 {% block pageStyles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <style>
 .lr-bg-green {
 	background-color: #8AC0AE;
 }
 
-.lr-green {
+a, .lr-green {
 	color: #8AC0AE;
 }
+a:hover{
+	color: #50947d;
+}
+.btn-green {
+	background-color: #8ac0ae;
+	color: #fff;
+}
+.btn-green:hover {
+	background-color: #50947d;
+	color: #fff;
+}
 </style>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 {% endblock %}
 
 {% block navbar %}
@@ -21,25 +32,25 @@
 
 {% block content %}
 <div class="w-50 mt-0 p-4 mx-auto lr-bg-alert text-center">
-		<h1>Transfer 1 Digital Street</h1>
+	<h1>Transfer 1 Digital Street</h1>
 
-		<p>
-			I agree to transfer
-		</p>
-		<p>
-			1 Digital Street,<br>
-			Bristol,<br>
-			BS2 8EN
-		</p>
-		<p>
-			to
-		</p>
-		<p>
-			David Jones
-		</p>
+	<p>
+		I agree to transfer
+	</p>
+	<p>
+		1 Digital Street,<br>
+		Bristol,<br>
+		BS2 8EN
+	</p>
+	<p>
+		to
+	</p>
+	<p>
+		David Jones
+	</p>
 
-		<p>
-			<a class="btn btn-primary btn-lg" href="confirm.html">Continue</a>
-		</p>
-	</div>
+	<p>
+		<a class="btn btn-green btn-lg" href="confirm.html">Continue</a>
+	</p>
+</div>
 {% endblock %}

@@ -3,16 +3,32 @@
 {% block pageTitle %}Seller Conveyancer{% endblock %}
 
 {% block pageStyles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <style>
 .lr-bg-green {
 	background-color: #8AC0AE;
 }
 
-.lr-green {
+a, .lr-green {
 	color: #8AC0AE;
 }
+a:hover{
+	color: #50947d;
+}
+.btn-green {
+	background-color: #8ac0ae;
+	color: #fff
+}
+.btn-green:hover {
+	background-color: #50947d;
+	color: #fff
+}
+
+.btn-img:hover {
+	background-color: #8ac0ae;
+    border-radius: 90px;
+}
 </style>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 {% endblock %}
 
 {% block navbar %}
@@ -21,7 +37,7 @@
 
 {% block content %}
 <div class="w-75 my-5 p-5 mx-auto lr-bg-alert text-center">
-				<h4>Use your touch ID to confirm the transfer of ownership</h4>
-		<p><a href="transferring.html"><i class="fas fa-fingerprint fa-fw fa-6x --gray-dark"></i></a></p>
+		<h4>Use your touch ID to confirm the transfer of ownership</h4>
+		<p><a href="transferring.html"><img class="btn-img-" width="120px" src="/public/images/fingerprint.png" /></a></p>
 	</div>
 {% endblock %}
