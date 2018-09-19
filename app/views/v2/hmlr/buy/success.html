@@ -21,20 +21,32 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-		<div class="govuk-grid-column-two-thirds">
-		  {{ govukPanel({
-			'titleText': "Your property transfer has been successful"
-		  }) }}
-	
-		  <h3 class="govuk-heading-m">What happens next</h3>
-		  <p class="govuk-body">
-			You can now view the <a class="govuk-link" href="/">updated title register</a>.
-		  </p>
-	
-		  <h3 class="govuk-heading-m">Questions?</h3>
-		  <p class="govuk-body">
-				If you have any questions about the next steps - contact your solicitor.
-		  </p>
-		</div>
-	  </div>
+	<div class="govuk-grid-column-two-thirds">
+		{{ govukPanel({
+		'titleText': "Your property transfer has been successful"
+		}) }}
+
+		<h3 class="govuk-heading-m">HM Land Registry have updated the register</h3>
+		<p class="govuk-body">
+			<strong>Address:</strong> <br>
+			1 Digital Street, <br>
+			Bristol, <br>
+			BS2 8EN	<br><br>
+
+			<strong>Title number:</strong> <br> ABC123X <br><br>
+
+			is now owned by: <strong>David Jones</strong>
+		</p>
+
+		<h3 class="govuk-heading-m">What happens next</h3>
+		<p class="govuk-body">
+		You can now view the <a class="govuk-link" href="/">updated title register</a>.
+		</p>
+
+		<h3 class="govuk-heading-m">Questions?</h3>
+		<p class="govuk-body">
+			If you have any questions about the next steps - contact your solicitor.
+		</p>
+	</div>
+</div>
 {% endblock %}
