@@ -25,6 +25,11 @@
 	.navbar-dark .navbar-nav .nav-link {
 		color: white;
 	}
+	
+	p {
+		font-size: 1.6em;
+		font-weight: light;
+	}
 </style>
 {% endblock %}
 
@@ -34,11 +39,18 @@
 
 {% block content %}
 <div class="w-75 mt-5 p-5 mx-auto lr-bg-alert text-center">
-	<h2>Congratulations David Jones.</h2>
-	<h2>The property has been transferred successfully.</h2>
+	<h2>Congratulations Mr Jones.</h2>
+	<h2>Your property transfer has been successful.</h2>
+	<p class="mt-4">HM Land Registry have updated the register.</p>
+	<p class="mt-4">
+		1 Digital Street,<br>
+		Bristol,<br>
+		BS2 8EN<br>
+		is now owned by: <b>David Jones</b>
+	</p>
 </div>
   
 <div class="my-4 mx-auto text-center">
-	<h2>View the <a href="/">updated register</a></h2>
+	<p>You can now view your new <a href="/">property record</a></p>
 </div>
 {% endblock %}

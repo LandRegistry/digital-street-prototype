@@ -23,6 +23,10 @@ a:hover{
 	background-color: #50947d;
 	color: #fff
 }
+p {
+	font-size: 1.6em;
+	font-weight: light;
+}
 </style>
 {% endblock %}
 
@@ -31,12 +35,16 @@ a:hover{
 {% endblock %}
 
 {% block content %}
-<div class="w-50 mt-5 p-5 mx-auto lr-bg-alert text-center">
-	<h3>Congratulations Lisa White!</h3>
-  <h3>The transfer of ownership has now been completed.</h3>
+<div class="w-75 mt-5 mx-auto text-center">
+	<h3>Congratulations Mrs White!</h3>
+	<h3>Your property transfer has been successful.</h3>
+</div>
+
+<div class="w-75 my-5 mx-auto text-center">
+	<p>HM Land Registry have updated the register. Ypu're no longer the registered owner of 1 Digital Street.</p>
 </div>
 
 <div class="mb-5 mx-auto text-center">
-  <h3>View the <a href="/">updated register</a></h3>
+	<p>You can now view the <a href="/">property record</a></p>
 </div>
 {% endblock %}

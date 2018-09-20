@@ -15,7 +15,6 @@ a, .lr-green {
 a:hover{
 	color: #50947d;
 }
-
 .btn-green {
 	background-color: #8ac0ae;
 	color: #fff
@@ -32,12 +31,8 @@ a:hover{
 {% endblock %}
 
 {% block content %}
-	<div class="w-75 my-5 p-5 mx-auto lr-bg-alert text-center">
-		<h1>Your property transfer is being processed</h1>
-		<p class="my-3"><img width="60px" src="/public/images/hourglass.png" /></p>
-	</div>
-
-	<script type="text/javascript">
-		setTimeout(function(){ window.location = "success.html" }, 3000);
-	</script>
+<div class="w-50 mt-5 p-5 mx-auto text-center">
+	<h3>Thank you for signing Mrs White.</h3>
+	<h3>We'll be in touch when the transfer is complete.</h3>
+</div>
 {% endblock %}
