@@ -40,7 +40,7 @@
 			<h1 class="govuk-heading-l">Transfer property ownership</h1>
 
 			{{ govukWarningText({
-			"html": "Only continue if the following statement is correct.<br>If you have any questions - contact your solicitor.",
+			"html": "Only continue if the following statement is correct.",
 			"iconFallbackText": "Warning"
 			}) }}
 
@@ -60,6 +60,12 @@
 				"text": "Continue",
 				"href": "confirm.html"
 			}) }}
+
+			{{ govukDetails({
+				summaryText: "I don't think this is right",
+				text: "If you have any questions - contact your solicitor."
+			}) }}
+			
 		</div>
 	  </div>
 {% endblock %}
