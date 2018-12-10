@@ -14,9 +14,7 @@ glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
         
         // Mount all routes exposed onto a path reflecting the prototype version
         router.use('/' + prototypeVersion, require(file))
-        
     })
 })
-
 
 module.exports = router

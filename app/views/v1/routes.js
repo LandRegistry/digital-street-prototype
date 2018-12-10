@@ -3,10 +3,6 @@ const fs = require('fs')
 const path = require('path')
 const router = express.Router()
 
-router.get('/foo', function(req, res) {
-    res.send('Do weird logic here if you want')
-})
-
 router.get('/property-record', function(req, res) {
     const lastURL = req.headers.referer
     const currentDate = new Date()

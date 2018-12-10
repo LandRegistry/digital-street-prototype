@@ -1,0 +1,36 @@
+{% extends "v3/gov/layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group ">
+        <form action="{{ nextURL }}" method="post" class="form">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="solicitor_name">
+              <h2 class="govuk-heading-l"> Which land or property details do you want to share? </h2>
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <select required class="govuk-select" id="selling_title" name="selling_title">
+              <option value="">Select land or property</option>
+                <option value="ZQV888860">1 Digital Street (ZQV888860)</option>
+                <option value="RTV237231">10 Digital Street (RTV237231)</option>
+            </select>
+          </div>
+          <div>
+            <br>
+            <button class="govuk-button">Continue</button>
+          </div>
+        </form>
+      </div>
+      {{ govukDetails({
+        "summaryText": "My land or property isn't listed",
+        "text": "We need this information so that we can share your property details with your solicitor. Please contact
+        them if you need any help."
+      }) }}
+  </div>
+</div>
+
+{% endblock %}
+
