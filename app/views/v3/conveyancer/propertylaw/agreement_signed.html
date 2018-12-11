@@ -1,0 +1,42 @@
+{% extends "v3/conveyancer/layout.html" %}
+
+{% block header %}
+  {% include "v3/conveyancer/propertylaw/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid mb-5">
+        <div class="row">
+            {% block sidebar %}
+                {% include "v3/conveyancer/propertylaw/includes/sidebar.html" %}
+            {% endblock %}
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-4">
+                {% block beforeContent %}
+                {% endblock %}
+
+                {% block content %}
+                <div class="col-lg-7 propertylaw-container text-center p-3">
+                    <h1 class="font-weight-bold">Great news!</h1>
+                    <div class="h4">
+                    You've signed your sales and transfer agreements<br>
+                    1 Digital Street<br>
+                    Bristol<br>      
+                    England<br>
+                    BS2 8EN
+                    <br>will be transferred on <br><strong>{{ completionDate }}</strong>
+                    <br><br>
+                    We'll be in touch with any updates<br>
+                    <strong>Please now <u><a href="{{ nextURL }}" class="colour-inherit">logout</a></u></strong>
+                    </div>
+                </div>
+                {% endblock %}
+
+            </main>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block bodyEnd %}
+{% endblock %}

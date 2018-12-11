@@ -1,0 +1,80 @@
+{% extends "v3/conveyancer/layout.html" %}
+
+{% block header %}
+  {% include "v3/conveyancer/conveyit4u/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+  <div class="container-fluid mb-5">
+		<div class="row">
+      {% block sidebar %}
+        {% include "v3/conveyancer/conveyit4u/includes/sidebar.html" %}
+      {% endblock %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
+        {% block beforeContent %}
+        {% endblock %}
+
+        {% block content %}
+          <div class="row">
+            <div class="col-10 m-auto">
+              <h1>Cases</h1>
+              <table class="w-100 table-hover" id="tbl_case_list">
+                <tbody>          
+                  <thead>
+                    <tr>
+                      <th scope="col">Client</th>
+                      <th scope="col">Case number</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Case type</th>
+                      <th scope="col">Title number</th>
+                      <th scope="col">Action required</th>
+                    </tr>
+                  </thead>            
+                  <tr>
+                    <td scope="row">Lisa White</td>
+                    <td scope="row">ABCD123</td>
+                    <td scope="row">
+                        1 Digital Street, Bristol, BS2 8EN
+                    </td>
+                    <td scope="row">Selling</td>
+                    <td scope="row">
+                      ZQV888860
+                    </td>
+                    <td scope="row">
+                      <a href="{{ nextURL }}">Waiting for agreement</a>
+                    </td>                
+                  </tr>
+                  <tr>
+                      <td scope="row">Jim Smith</td>
+                      <td scope="row">KSYB294</td>
+                      <td scope="row">
+                          30 Digital Street, Bristol, BS2 8EN
+                      </td>
+                      <td scope="row">Selling</td>
+                      <td scope="row">                  
+                      </td>
+                      <td scope="row">Waiting for title information</td>                
+                    </tr>
+                    <tr>
+                        <td scope="row">Martin Keats</td>
+                        <td scope="row">MAYN467</td>
+                        <td scope="row">
+                            31 Digital Street, Bristol, BS2 8EN
+                        </td>
+                        <td scope="row">Selling</td>
+                        <td scope="row">                  
+                        </td>
+                        <td scope="row">Waiting for title information</td>                
+                      </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+{% endblock %}
