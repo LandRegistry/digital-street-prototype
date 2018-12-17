@@ -76,16 +76,16 @@ router.get('/conveyit4u/case-list-2', function(req, res) {
                { nextURL: nextURL, userName: userName })
 })
 
-// Case list with action 'Draft contract'
+// Case list with action 'Draft sales agreement'
 router.get('/conveyit4u/case-list-3', function(req, res) {
-    const nextURL = '/v4/conveyit4u/draft-contract'
+    const nextURL = '/v4/conveyit4u/draft-sales-agreement'
     const userName = 'Natasha Powell'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_3.html'),
                { nextURL: nextURL, userName: userName })
 })
 
-// Case list with action 'Draft contract'
-router.get('/conveyit4u/draft-contract', function(req, res) {
+// Case list with action 'Draft sales agreement'
+router.get('/conveyit4u/draft-sales-agreement', function(req, res) {
     const nextURL = '/v4/conveyit4u/case-list-4'
     const userName = 'Natasha Powell'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/draft_contract.html'),
@@ -107,16 +107,16 @@ router.get('/propertylaw/login-1', function(req, res) {
                { nextURL: nextURL })
 })
 
-// Buyer's conveyancer's case list with action 'Review contract'
+// Buyer's conveyancer's case list with action 'Review sales agreement'
 router.get('/propertylaw/case-list-1', function(req, res) {
-    const nextURL = '/v4/propertylaw/review-contract'
+    const nextURL = '/v4/propertylaw/review-sales-agreement'
     const userName = 'Samuel Barnes'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/case_list_1.html'),
                { nextURL: nextURL, userName: userName })
 })
 
-// Review contract page
-router.get('/propertylaw/review-contract', function(req, res) {
+// Review sales agreement
+router.get('/propertylaw/review-sales-agreement', function(req, res) {
     // Set completion date 3 weeks in the future
     const completionDate = moment().add(21, 'days').format('Do MMMM YYYY')
     const contractDate = moment().format('DD/MM/YYYY HH:mm:ss')
@@ -175,21 +175,21 @@ router.get('/conveyit4u/agreement-signed', function(req, res) {
 })
 
 // Buyer's notification to sign the sales and transfer agreements
-router.get('/propertylaw/notification-sign-agreements', function(req, res) {    
+router.get('/propertylaw/notification-sign-agreements', function(req, res) {
     const nextURL = '/v4/propertylaw/login-2'
     res.render(path.resolve(__dirname, './conveyancer/notifications/notification_sign_agreements.html'),
                { nextURL: nextURL })
 })
 
 // Login page for the buyer on their conveyancer's portal
-router.get('/propertylaw/login-2', function(req, res) {    
+router.get('/propertylaw/login-2', function(req, res) {
     const nextURL = '/v4/propertylaw/agreement-context'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/login.html'),
                { nextURL: nextURL })
 })
 
 // Context page for buyer prior to agreement
-router.get('/propertylaw/agreement-context', function(req, res) {    
+router.get('/propertylaw/agreement-context', function(req, res) {
     const nextURL = '/v4/propertylaw/accept-agreement'
     const userName = "David Jones"
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/agreement_context.html'),
@@ -197,7 +197,7 @@ router.get('/propertylaw/agreement-context', function(req, res) {
 })
 
 // Buyer accept agreement page
-router.get('/propertylaw/accept-agreement', function(req, res) {    
+router.get('/propertylaw/accept-agreement', function(req, res) {
     const nextURL = '/v4/propertylaw/confirm-agreement'
     const userName = "David Jones"
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/accept_agreement.html'),
@@ -205,7 +205,7 @@ router.get('/propertylaw/accept-agreement', function(req, res) {
 })
 
 // Buyer confirm agreement page
-router.get('/propertylaw/confirm-agreement', function(req, res) {    
+router.get('/propertylaw/confirm-agreement', function(req, res) {
     const nextURL = '/v4/propertylaw/agreement-signed'
     const userName = "David Jones"
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/confirm_agreement.html'),
@@ -216,14 +216,14 @@ router.get('/propertylaw/confirm-agreement', function(req, res) {
 router.get('/propertylaw/agreement-signed', function(req, res) {
     // Set completion date 3 weeks in the future
     const completionDate = moment().add(21, 'days').format('Do MMMM YYYY')
-    const nextURL = '/v4/conveyit4u/notification-transfer-complete'    
+    const nextURL = '/v4/conveyit4u/notification-transfer-complete'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/agreement_signed.html'),
                { nextURL: nextURL, completionDate: completionDate })
 })
 
 // Seller notification for completion day
 router.get('/conveyit4u/notification-transfer-complete', function(req, res) {
-    const nextURL = '/v4/conveyit4u/login-3'    
+    const nextURL = '/v4/conveyit4u/login-3'
     res.render(path.resolve(__dirname, './conveyancer/notifications/notification_completion_day.html'),
                { nextURL: nextURL })
 })
@@ -237,7 +237,7 @@ router.get('/conveyit4u/login-3', function(req, res) {
 
 // Transfer complete confirmation page for seller
 router.get('/conveyit4u/transfer-complete', function(req, res) {
-    const nextURL = '/v4/propertylaw/notification-transfer-complete'    
+    const nextURL = '/v4/propertylaw/notification-transfer-complete'
     const userName = "Lisa White"
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/transfer_complete.html'),
                { nextURL: nextURL, userName: userName })
@@ -245,30 +245,30 @@ router.get('/conveyit4u/transfer-complete', function(req, res) {
 
 // Transfer complete confirmation page for seller
 router.get('/propertylaw/notification-transfer-complete', function(req, res) {
-    const nextURL = '/v4/propertylaw/login-3'        
+    const nextURL = '/v4/propertylaw/login-3'
     res.render(path.resolve(__dirname, './conveyancer/notifications/notification_completion_day.html'),
                { nextURL: nextURL })
 })
 
 // Buyer login page on their conveyancer's portal on completion day
 router.get('/propertylaw/login-3', function(req, res) {
-    const nextURL = '/v4/propertylaw/transfer-complete'        
+    const nextURL = '/v4/propertylaw/transfer-complete'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/login.html'),
                { nextURL: nextURL })
 })
 
 // Transfer complete confirmation page for buyer
 router.get('/propertylaw/transfer-complete', function(req, res) {
-    const nextURL = '/'        
+    const nextURL = '/'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/transfer_complete.html'),
                { nextURL: nextURL })
 })
 
-/******** 
+/********
  * Login route to enable end to end flow without seller instructing conveyancer
 ********/
 router.get('/conveyit4u/alternate-login', function(req, res) {
-    const nextURL = '/v4/conveyit4u/case-list-3'        
+    const nextURL = '/v4/conveyit4u/case-list-3'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/login.html'),
                { nextURL: nextURL })
 })
