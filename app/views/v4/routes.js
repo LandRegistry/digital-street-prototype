@@ -274,5 +274,19 @@ router.get('/conveyit4u/alternate-login', function(req, res) {
 })
 
 
+// Lender login
+router.get('/loans4homes/login', function(req, res) {
+    const nextURL = '/v4/loans4homes/list-1'
+    res.render(path.resolve(__dirname, './lender/loans4homes/login.html'),
+               { nextURL: nextURL })
+})
+
+// Lender login
+router.get('/loans4homes/list-1', function(req, res) {
+    const nextURL = '/v4/loans4homes/agree-to-discharge'
+    res.render(path.resolve(__dirname, './lender/loans4homes/list_1.html'),
+               { nextURL: nextURL })
+})
+
 
 module.exports = router
