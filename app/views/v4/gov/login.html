@@ -1,0 +1,43 @@
+{% extends "v4/gov/layout.html" %}
+
+{% block header %}
+  {{ govukHeader({
+      "homepageUrl": "/",
+      "containerClasses": "govuk-width-container",
+      "serviceName": "",
+      "serviceUrl": "/"
+    })
+  }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        Log in
+      </h1>
+      <p class="govuk-body-m">
+        Log in to access title information about the land or property that you own. You can then share these details
+        with a solicitor.
+      </p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <form action="{{ nextURL }}" method="post">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="email">Email</label>
+              <input class="govuk-input" id="email" name="email" type="text" required="required">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="password">Password</label>
+              <input class="govuk-input" id="password" name="password" type="password">
+            </div>
+            <div class="govuk-form-group">              
+              <button type="submit" class="govuk-button">Log in</button>
+            </div>
+          </form>
+      </div>
+  </div>
+{% endblock %}
+

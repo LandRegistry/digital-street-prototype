@@ -1,0 +1,31 @@
+{% extends "v4/gov/layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{ nextURL }}" class="form">
+      <div class="govuk-form-group ">
+        <label class="govuk-label gov-uk-label--xl" for="reference_number">
+          <h2 class="govuk-heading-l">Case reference number</h2>
+        </label>
+        <span id="case_hint" class="govuk-hint">Your solicitor will have given you this number.
+          <br/>
+          For example, MR1234.
+        </span>
+        <input class="govuk-input govuk-!-width-one-third" required id="case_number"
+               name="case_number" type="text" aria-describedby="case_hint case_number_error">
+      </div>
+      <button class="govuk-button">Continue</button>
+    </form>
+    <div>
+      {{ govukDetails({
+        "summaryText": "I don't know my reference number",
+        "text": "We need this information so that we can share your property details with your solicitor. Please contact
+        them if you need any help."
+      }) }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

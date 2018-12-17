@@ -1,0 +1,35 @@
+{% extends "v4/gov/layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group ">
+      <form action="{{ nextURL }}" method="post" class="form">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="solicitor_name">
+            <h2 class="govuk-heading-l">Choose a solicitor</h2>
+          </label>
+        </h1>
+        <div class="govuk-form-group">
+          <select required class="govuk-select" id="sort" name="conveyancer">
+            <option value="">Select solicitor</option>
+            <option>Conveyit4u</option>
+            <option>Propertylaw.net</option>
+          </select>
+        </div>
+        <div>
+          <br>
+          <button class="govuk-button">Continue</button>
+        </div>
+      </form>
+    </div>
+    {{ govukDetails({
+      "summaryText": "My solicitor isn't listed",
+      "text": "We need this information so that we can share your property details with your solicitor. Please contact
+      them if you need any help."
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

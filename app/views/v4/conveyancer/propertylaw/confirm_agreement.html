@@ -1,0 +1,56 @@
+{% extends "v4/conveyancer/layout.html" %}
+
+
+{% block header %}
+  {% include "v4/conveyancer/propertylaw/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+  <div class="container-fluid mb-5">
+    <div class="row">
+      {% block sidebar %}
+        {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
+      {% endblock %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-2 mt-5">
+        {% block beforeContent %}
+        {% endblock %}
+
+        {% block content %}
+            <div id="confirm-row" class="row">
+                <div class="col-lg-7 propertylaw-container text-center p-3">
+                    <h4>Use your touch ID to confirm that you're happy to sign your sales and transfer agreements</h4><br>
+                    <form id="confirm-form" action="{{ nextURL }}" method="POST">                        
+                        <a href="#" onclick="startSigning()">
+                        <i class="fas fa-fingerprint fa-fw fa-6x"></i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div id="signing-row" class="row text-center" style="display:none">
+                <div class="col-lg-7 propertylaw-container text-center p-3">
+                <h4>Signing your sales and transfer agreements...</h4><br>
+                <a href="{{ nextURL }}">
+                    <i class="fa fa-4x fa-spinner fa-spin"></i>
+                </a>
+                </div>
+            </div>
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+{% endblock %}
+
+{% block bodyEnd %}
+  <script>
+    function startSigning() {
+      var formRow = document.getElementById('confirm-row');
+      var signingRow = document.getElementById('signing-row');
+      formRow.style.display = "none";
+      signingRow.style.display = "block";
+      setTimeout(function () {
+        document.getElementById('confirm-form').submit();
+      }, 2000);
+    }
+  </script>
+  {{ super() }}
+{% endblock %}

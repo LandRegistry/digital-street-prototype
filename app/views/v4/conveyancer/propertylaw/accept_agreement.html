@@ -1,0 +1,70 @@
+{% extends "v4/conveyancer/layout.html" %}
+
+{% block header %}
+  {% include "v4/conveyancer/propertylaw/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid mb-5">
+        <div class="row">
+            {% block sidebar %}
+                {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
+            {% endblock %}
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-4">
+                {% block beforeContent %}
+                {% endblock %}
+
+                {% block content %}
+                <form name="agreement_form" action="{{ nextURL }}">
+                    <div class="row">
+                    <div class="col-lg-7 propertylaw-container">
+                        <h1>Sign your sales and transfer agreements</h1>
+                        <p class="mb-0">          
+                            Please agree to your sales contract and property transfer. You'll confirm this on the next screen.<br>
+                            <strong>
+                                1 Digital Street <br>
+                                Bristol <br>
+                                England <br>
+                                BS2 8EN  
+                            </strong>
+                        </p>
+                        <div class="row m-2">
+                        <div class="col">
+                            will be bought for
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">£124,000.00</div>
+                            </div>
+                            <div class="row m-xs-1">
+                                <div class="col-1 col-lg-5 text-right p-0 ">
+                                    <input type="checkbox" class="mt-xs-2" required="required">
+                                </div>
+                                <div class="col text-left pl-2">
+                                    I agree to my <strong><u>sales contract</u></strong>
+                                </div>
+                            </div>
+                            <div class="row m-xs-1">
+                                <div class="col-1 col-lg-5 text-right p-0">
+                                    <input type="checkbox" class="mt-xs-2" required="required">
+                                </div>
+                                <div class="col text-left pl-2">
+                                    I agree to <strong><u>transfer my property</u></strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn propertylaw-bg-button btn-blue m-3">
+                                    Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+{% endblock %}
