@@ -1,0 +1,76 @@
+{% extends "v4/lender/layout.html" %}
+
+{% block header %}
+  {% include "v4/lender/loans4homes/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+  <div class="container-fluid mb-5">
+		<div class="row">
+      {% block sidebar %}
+        {% include "v4/lender/loans4homes/includes/sidebar.html" %}
+      {% endblock %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
+        {% block beforeContent %}
+        {% endblock %}
+
+        {% block content %}
+          <form name="remove_charge_form" action="">
+            <div class="row">
+              <div class="col-lg-9 loans4homes-container loans4homes-content-text">
+                <div class="h3 font-weight-bold">Agree to discharge of charge and charge restriction</div>
+                <div class="row m-lg-2">
+                  <div class="col h5 small_font">
+                    As the seller's offer for their property satisfies their redemption figure you can consent to the
+                    discharge of your charge and charge restriction. By agreeing, you're allowing HMLR to remove these
+                    from the register on point of completion.
+                  </div>
+                </div>
+                <div class="row m-lg-2">
+                  <div class="col">
+                    <span class="h5 font-weight-bold"><strong>Charges</strong></span><br>
+                  </div>
+                </div>
+                {% for title_charge in title_charges %}
+                  <div class="row m-lg-2">
+                    <div class="col">
+                      <strong>Date: </strong>{{ title_charge['date'] }}<br>
+                      <strong>Amount: </strong>{{ title_charge['amount'] }}
+                    </div>
+                  </div>
+                {% endfor %}
+                <br>
+                <div class="row m-lg-2">
+                  <div class="col">
+                      <span class="h5 font-weight-bold"><strong>Restrictions</strong></span><br>
+                  </div>
+                </div>
+                {% for title_restriction in title_restrictions %}
+                  <div class="row m-lg-2">
+                    <div class="col">
+                      <div class="font-120">{{ title_restriction['restriction_text'] }}
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                {% endfor %}
+                <div class="row">
+                  <div class="col mb-3">
+                    <button type="submit" class="btn font-weight-bold {{ config['APP_USER'] }}-button">
+                      Agree to discharge
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mb-3">
+                    <u><a href="#" class="colour-inherit">I don't agree with this discharge</a></u>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+{% endblock %}

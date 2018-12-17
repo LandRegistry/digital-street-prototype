@@ -76,7 +76,7 @@ router.get('/conveyit4u/case-list-2', function(req, res) {
                { nextURL: nextURL, userName: userName })
 })
 
-// Case list with action 'Draft contract'
+// Case list with action 'Draft sales agreement'
 router.get('/conveyit4u/case-list-3', function(req, res) {
     const nextURL = '/v4/conveyit4u/draft-contract'
     const userName = 'Natasha Powell'
@@ -84,7 +84,7 @@ router.get('/conveyit4u/case-list-3', function(req, res) {
                { nextURL: nextURL, userName: userName })
 })
 
-// Case list with action 'Draft contract'
+// Draft sales agreement page
 router.get('/conveyit4u/draft-contract', function(req, res) {
     const nextURL = '/v4/conveyit4u/case-list-4'
     const userName = 'Natasha Powell'
@@ -273,6 +273,20 @@ router.get('/conveyit4u/alternate-login', function(req, res) {
                { nextURL: nextURL })
 })
 
+
+// Lender login
+router.get('/loans4homes/login', function(req, res) {
+    const nextURL = '/v4/loans4homes/list-1'
+    res.render(path.resolve(__dirname, './lender/loans4homes/login.html'),
+               { nextURL: nextURL })
+})
+
+// Lender login
+router.get('/loans4homes/list-1', function(req, res) {
+    const nextURL = '/v4/loans4homes/agree-to-discharge'
+    res.render(path.resolve(__dirname, './lender/loans4homes/list_1.html'),
+               { nextURL: nextURL })
+})
 
 
 module.exports = router
