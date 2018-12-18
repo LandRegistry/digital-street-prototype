@@ -15,7 +15,7 @@
         {% endblock %}
 
         {% block content %}
-          <form name="remove_charge_form" action="">
+          <form name="remove_charge_form" action="{{ nextURL }}">
             <div class="row">
               <div class="col-lg-9 loans4homes-container loans4homes-content-text">
                 <div class="h3 font-weight-bold">Agree to discharge of charge and charge restriction</div>
@@ -28,35 +28,30 @@
                 </div>
                 <div class="row m-lg-2">
                   <div class="col">
-                    <span class="h5 font-weight-bold"><strong>Charges</strong></span><br>
+                    <span class="h5 font-weight-bold"><strong>Charge</strong></span><br>
                   </div>
-                </div>
-                {% for title_charge in title_charges %}
-                  <div class="row m-lg-2">
-                    <div class="col">
-                      <strong>Date: </strong>{{ title_charge['date'] }}<br>
-                      <strong>Amount: </strong>{{ title_charge['amount'] }}
-                    </div>
+                </div>                
+                <div class="row m-lg-2">
+                  <div class="col">
+                    <strong>Date: </strong> 10/03/2011 <br>
+                    <strong>Amount: </strong> £110,000
                   </div>
-                {% endfor %}
+                </div>                
                 <br>
                 <div class="row m-lg-2">
                   <div class="col">
-                      <span class="h5 font-weight-bold"><strong>Restrictions</strong></span><br>
+                      <span class="h5 font-weight-bold"><strong>Restriction</strong></span><br>
+                  </div>
+                </div>                
+                <div class="row m-lg-2">
+                  <div class="col">
+                    RESTRICTION: No disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the Charge dated 10/03/2011 in favour of Loans4Homes referred to in the Charges Register.                    
                   </div>
                 </div>
-                {% for title_restriction in title_restrictions %}
-                  <div class="row m-lg-2">
-                    <div class="col">
-                      <div class="font-120">{{ title_restriction['restriction_text'] }}
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                {% endfor %}
+                <br>                
                 <div class="row">
                   <div class="col mb-3">
-                    <button type="submit" class="btn font-weight-bold {{ config['APP_USER'] }}-button">
+                    <button type="submit" class="btn font-weight-bold loans4homes-button">
                       Agree to discharge
                     </button>
                   </div>

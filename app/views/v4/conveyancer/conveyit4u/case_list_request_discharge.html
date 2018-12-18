@@ -1,17 +1,16 @@
 {% extends "v4/conveyancer/layout.html" %}
 
 {% block header %}
-  {% include "v4/conveyancer/propertylaw/includes/header.html" %}
+  {% include "v4/conveyancer/conveyit4u/includes/header.html" %}
 {% endblock %}
 
 {% block main %}
   <div class="container-fluid mb-5">
 		<div class="row">
       {% block sidebar %}
-        {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
+        {% include "v4/conveyancer/conveyit4u/includes/sidebar.html" %}
       {% endblock %}
-
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
         {% block beforeContent %}
         {% endblock %}
 
@@ -32,24 +31,24 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td scope="row">David Jones</td>
-                    <td scope="row">LAUN245</td>
+                    <td scope="row">Lisa White</td>
+                    <td scope="row">ABCD123</td>
                     <td scope="row">
                         1 Digital Street, Bristol, BS2 8EN
                     </td>
-                    <td scope="row">Buying</td>
+                    <td scope="row">Selling</td>
                     <td scope="row">
                       ZQV888860
                     </td>
                     <td scope="row">
-                      <a href="{{ nextURL }}">Review sales agreement</a>
+                      <a href="{{ nextURL }}">Request discharge of current mortgage</a>
                     </td>
                   </tr>
                   <tr>
-                      <td scope="row">Holly Windsor</td>
-                      <td scope="row">NATT237</td>
+                      <td scope="row">Jim Smith</td>
+                      <td scope="row">KSYB294</td>
                       <td scope="row">
-                          32 Digital Street, Bristol, BS2 8EN
+                          30 Digital Street, Bristol, BS2 8EN
                       </td>
                       <td scope="row">Selling</td>
                       <td scope="row">
@@ -58,15 +57,14 @@
                     </tr>
                     <tr>
                         <td scope="row">Martin Keats</td>
-                        <td scope="row">PADV126</td>
+                        <td scope="row">MAYN467</td>
                         <td scope="row">
-                            11 Digital Street, Bristol, BS2 8EN
+                            31 Digital Street, Bristol, BS2 8EN
                         </td>
-                        <td scope="row">Buying</td>
+                        <td scope="row">Selling</td>
                         <td scope="row">
-                          RTV237232
                         </td>
-                        <td scope="row">Waiting for draft of agreement</td>
+                        <td scope="row">Waiting for title information</td>
                       </tr>
                 </tbody>
               </table>

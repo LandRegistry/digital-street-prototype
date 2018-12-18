@@ -7,15 +7,15 @@ const router = express.Router()
 // Seller's conveyancer login page
 router.get('/conveyit4u/login-1', function(req, res) {
     const appStyle = 'conveyit4u'
-    const nextURL = '/v4/conveyit4u/case-list-1'
+    const nextURL = '/v4/conveyit4u/case-list-waiting-for-title'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/login.html'), { appStyle: appStyle, nextURL: nextURL })
 })
 
 // Initial case list page with action 'Waiting for title information'
-router.get('/conveyit4u/case-list-1', function(req, res) {
+router.get('/conveyit4u/case-list-waiting-for-title', function(req, res) {
     const nextURL = '/v4/gov/seller-login'
     const userName = 'Natasha Powell'
-    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_1.html'),
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_waiting_for_title.html'),
                { nextURL: nextURL, userName: userName })
 })
 
@@ -63,55 +63,95 @@ router.get('/gov/instruct-confirm', function(req, res) {
 
 // Instruction completed page
 router.get('/gov/instruct-completed', function(req, res) {
-    const nextURL = '/v4/conveyit4u/case-list-2'
+    const nextURL = '/v4/conveyit4u/case-list-view-title'
     res.render(path.resolve(__dirname, './gov/instruct_completed.html'),
                { nextURL: nextURL })
 })
 
 // Case list with action 'View full title information'
-router.get('/conveyit4u/case-list-2', function(req, res) {
-    const nextURL = '/v4/conveyit4u/case-list-3'
+router.get('/conveyit4u/case-list-view-title', function(req, res) {
+    const nextURL = '/v4/conveyit4u/case-list-request-discharge'
     const userName = 'Natasha Powell'
-    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_2.html'),
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_view_title.html'),
                { nextURL: nextURL, userName: userName })
 })
 
+// Case list with action 'Request discharge of current mortgage'
+router.get('/conveyit4u/case-list-request-discharge', function(req, res) {
+    const nextURL = '/v4/loans4homes/login'
+    const userName = 'Natasha Powell'
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_request_discharge.html'),
+               { nextURL: nextURL, userName: userName })
+})
+
+// Lender login
+router.get('/loans4homes/login', function(req, res) {
+    const nextURL = '/v4/loans4homes/charge-list-agree-to-discharge'
+    res.render(path.resolve(__dirname, './lender/loans4homes/login.html'),
+               { nextURL: nextURL })
+})
+
+// Lender charge list with action 'Agree to discharge'
+router.get('/loans4homes/charge-list-agree-to-discharge', function(req, res) {    
+    const nextURL = '/v4/loans4homes/agree-to-discharge'
+    const userName = 'Terry Jenkins'
+    res.render(path.resolve(__dirname, './lender/loans4homes/charge_list_agree_to_discharge.html'),
+               { nextURL: nextURL, userName: userName })
+})
+
+// Lender 'agree to discharge
+router.get('/loans4homes/agree-to-discharge', function(req, res) {
+    const nextURL = '/v4/loans4homes/charge-list-discharge-approved'
+    const userName = 'Terry Jenkins'
+    res.render(path.resolve(__dirname, './lender/loans4homes/agree_to_discharge.html'),
+    { nextURL: nextURL, userName: userName })
+})
+
+// Lender charge list with action 'Discharge approved'
+router.get('/loans4homes/charge-list-discharge-approved', function(req, res) {    
+    const nextURL = '/v4/conveyit4u/case-list-draft-sales'
+    const userName = 'Terry Jenkins'
+    res.render(path.resolve(__dirname, './lender/loans4homes/charge_list_discharge_approved.html'),
+               { nextURL: nextURL, userName: userName })
+})
+
+
 // Case list with action 'Draft sales agreement'
-router.get('/conveyit4u/case-list-3', function(req, res) {
+router.get('/conveyit4u/case-list-draft-sales', function(req, res) {
     const nextURL = '/v4/conveyit4u/draft-sales-agreement'
     const userName = 'Natasha Powell'
-    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_3.html'),
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_draft_sales.html'),
                { nextURL: nextURL, userName: userName })
 })
 
 // Case list with action 'Draft sales agreement'
 router.get('/conveyit4u/draft-sales-agreement', function(req, res) {
-    const nextURL = '/v4/conveyit4u/case-list-4'
+    const nextURL = '/v4/conveyit4u/case-list-waiting-for-agreement'
     const userName = 'Natasha Powell'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/draft_contract.html'),
                { nextURL: nextURL, userName: userName })
 })
 
 // Case list with action 'Waiting for agreement'
-router.get('/conveyit4u/case-list-4', function(req, res) {
+router.get('/conveyit4u/case-list-waiting-for-agreement', function(req, res) {
     const nextURL = '/v4/propertylaw/login-1'
     const userName = 'Natasha Powell'
-    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_4.html'),
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/case_list_waiting_for_agreement.html'),
                { nextURL: nextURL, userName: userName })
 })
 
 // Buyer's conveyancer login page
 router.get('/propertylaw/login-1', function(req, res) {
-    const nextURL = '/v4/propertylaw/case-list-1'
+    const nextURL = '/v4/propertylaw/case-list-review-sales-agreement'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/login.html'),
                { nextURL: nextURL })
 })
 
 // Buyer's conveyancer's case list with action 'Review sales agreement'
-router.get('/propertylaw/case-list-1', function(req, res) {
+router.get('/propertylaw/case-list-review-sales-agreement', function(req, res) {
     const nextURL = '/v4/propertylaw/review-sales-agreement'
     const userName = 'Samuel Barnes'
-    res.render(path.resolve(__dirname, './conveyancer/propertylaw/case_list_1.html'),
+    res.render(path.resolve(__dirname, './conveyancer/propertylaw/case_list_review_sales_agreement.html'),
                { nextURL: nextURL, userName: userName })
 })
 
@@ -268,25 +308,9 @@ router.get('/propertylaw/transfer-complete', function(req, res) {
  * Login route to enable end to end flow without seller instructing conveyancer
 ********/
 router.get('/conveyit4u/alternate-login', function(req, res) {
-    const nextURL = '/v4/conveyit4u/case-list-3'
+    const nextURL = '/v4/conveyit4u/case-list-view-title'
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/login.html'),
                { nextURL: nextURL })
 })
-
-
-// Lender login
-router.get('/loans4homes/login', function(req, res) {
-    const nextURL = '/v4/loans4homes/list-1'
-    res.render(path.resolve(__dirname, './lender/loans4homes/login.html'),
-               { nextURL: nextURL })
-})
-
-// Lender login
-router.get('/loans4homes/list-1', function(req, res) {
-    const nextURL = '/v4/loans4homes/agree-to-discharge'
-    res.render(path.resolve(__dirname, './lender/loans4homes/list_1.html'),
-               { nextURL: nextURL })
-})
-
 
 module.exports = router
