@@ -177,7 +177,7 @@ router.get('/conveyit4u/agreement-signed', function(req, res) {
 // Buyer's notification to sign the sales and transfer agreements
 router.get('/propertylaw/notification-sign-agreements', function(req, res) {
     const nextURL = '/v4/propertylaw/login-2'
-    res.render(path.resolve(__dirname, './conveyancer/notifications/notification_sign_agreements.html'),
+    res.render(path.resolve(__dirname, './conveyancer/notifications/notification_sign_agreements_buyer.html'),
                { nextURL: nextURL })
 })
 
