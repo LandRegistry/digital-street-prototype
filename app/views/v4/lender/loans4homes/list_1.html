@@ -1,0 +1,56 @@
+{% extends "v4/lender/layout.html" %}
+
+{% block header %}
+  {% include "v4/lender/loans4homes/includes/header.html" %}
+{% endblock %}
+
+{% block main %}
+  <div class="container-fluid mb-5">
+		<div class="row">
+      {% block sidebar %}
+        {% include "v4/lender/loans4homes/includes/sidebar.html" %}
+      {% endblock %}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
+        {% block beforeContent %}
+        {% endblock %}
+
+        {% block content %}
+          <div class="row loans4homes-content-text">
+            <div class="col-lg-10 m-auto">
+              <h1>Alerts</h1>
+              <table class="w-100 table-hover" id="tbl_list">
+                <tbody>
+                  <thead>
+                  <tr>
+                    <th scope="col">Client</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Title number</th>
+                    <th scope="col">Action required</th>
+                  </tr>
+                  </thead>
+                    <tr>
+                      <td scope="row">Lisa White</td>
+                      <td scope="row">
+                        1
+                        Digital Street
+                        Bristol
+                        BS2 8EN
+                      </td>
+                      <td scope="row">
+                          ZQV888860
+                      </td>
+                      <td scope="row">
+                        <a href="{{ nextURL }}">
+                          Agree to discharge mortgage
+                        </a>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        {% endblock %}
+      </main>
+    </div>
+  </div>
+{% endblock %}
