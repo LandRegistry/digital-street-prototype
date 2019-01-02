@@ -10,68 +10,52 @@
       {% block sidebar %}
         {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
       {% endblock %}
-
-      <main role="main" class="ml-sm-auto col-lg-10">
+      <main role="main" class="col-md-10 ml-sm-auto px-4">
         {% block beforeContent %}
         {% endblock %}
 
-        {% block content %}
-          <div class="row">
-            <div class="col-10 m-auto">
-              <h1>Cases</h1>
-              <table class="w-100 table-hover" id="tbl_case_list">
-                <tbody>
-                  <thead>
-                    <tr>
-                      <th scope="col">Client</th>
-                      <th scope="col">Case number</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Case type</th>
-                      <th scope="col">Title number</th>
-                      <th scope="col">Action required</th>
-                    </tr>
-                  </thead>
+        {% block content %}          
+          <div class="m-auto pt-3">
+            <h1>Cases</h1>
+            <table class="table table-hover" id="tbl_case_list">
+              <tbody>
+                <thead>
                   <tr>
-                    <td scope="row">David Jones</td>
-                    <td scope="row">LAUN245</td>
-                    <td scope="row">
-                        1 Digital Street, Bristol, BS2 8EN
-                    </td>
-                    <td scope="row">Buying</td>
-                    <td scope="row">
-                      ZQV888860
-                    </td>
-                    <td scope="row">
-                      <a href="{{ nextURL }}">Review sales agreement</a>
-                    </td>
+                    <th scope="col">Client</th>
+                    <th scope="col">Case number</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Case type</th>
+                    <th scope="col">Title number</th>
+                    <th scope="col">Action required</th>
                   </tr>
-                  <tr>
-                      <td scope="row">Holly Windsor</td>
-                      <td scope="row">NATT237</td>
-                      <td scope="row">
-                          32 Digital Street, Bristol, BS2 8EN
-                      </td>
-                      <td scope="row">Selling</td>
-                      <td scope="row">
-                      </td>
-                      <td scope="row">Waiting for title information</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">Martin Keats</td>
-                        <td scope="row">PADV126</td>
-                        <td scope="row">
-                            11 Digital Street, Bristol, BS2 8EN
-                        </td>
-                        <td scope="row">Buying</td>
-                        <td scope="row">
-                          RTV237232
-                        </td>
-                        <td scope="row">Waiting for draft of agreement</td>
-                      </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+                </thead>
+                <tr>
+                  <td scope="row">David Jones</td>
+                  <td>LAUN245</td>
+                  <td>1 Digital Street, Bristol, BS2 8EN</td>
+                  <td>Buying</td>
+                  <td>ZQV888860</td>
+                  <td><a href="{{ nextURL }}">Review sales agreement</a></td>
+                </tr>
+                <tr>
+                  <td scope="row">Holly Windsor</td>
+                  <td>NATT237</td>
+                  <td>32 Digital Street, Bristol, BS2 8EN</td>
+                  <td>Selling</td>
+                  <td></td>
+                  <td>Waiting for title information</td>
+                </tr>
+                <tr>
+                  <td scope="row">Martin Keats</td>
+                  <td>PADV126</td>
+                  <td>11 Digital Street, Bristol, BS2 8EN</td>
+                  <td>Buying</td>
+                  <td>RTV237232</td>
+                  <td>Waiting for draft of agreement</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>          
         {% endblock %}
       </main>
     </div>

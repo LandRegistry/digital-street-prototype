@@ -10,45 +10,36 @@
       {% block sidebar %}
         {% include "v4/lender/loans4homes/includes/sidebar.html" %}
       {% endblock %}
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
+      <main role="main" class="col-md-10 ml-sm-auto px-4">
         {% block beforeContent %}
         {% endblock %}
 
-        {% block content %}
-          <div class="row loans4homes-content-text">
-            <div class="col-lg-10 m-auto">      
-              <h1>Alerts</h1>
-              <table class="w-100 table-hover" id="tbl_list">
-                <tbody>        
-                  <thead>
+        {% block content %}          
+          <div class="m-auto pt-4 loans4homes-content-text">
+            <h1>Alerts</h1>
+            <table class="table table-hover" id="tbl_list">
+              <tbody>        
+                <thead>
+                <tr>
+                  <th scope="col">Client</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Title number</th>
+                  <th scope="col">Action required</th>
+                </tr>
+                </thead>                      
                   <tr>
-                    <th scope="col">Client</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Title number</th>
-                    <th scope="col">Action required</th>
-                  </tr>
-                  </thead>                      
-                    <tr>
-                      <td scope="row">Lisa White</td>
-                      <td scope="row">
-                        1 
-                        Digital Street
-                        Bristol
-                        BS2 8EN 
-                      </td>
-                      <td scope="row">
-                          ZQV888860
-                      </td>
-                      <td scope="row">                
-                        <a href="{{ nextURL }}">
-                          Agree to discharge mortgage
-                        </a>
-                      </td>
-                  </tr>          
-                </tbody>
-              </table>
-            </div>
-          </div>
+                    <td scope="row">Lisa White</td>
+                    <td>1 Digital Street, Bristol, BS2 8EN </td>
+                    <td scope="row">ZQV888860</td>
+                    <td scope="row">                
+                      <a href="{{ nextURL }}">
+                        Agree to discharge mortgage
+                      </a>
+                    </td>
+                </tr>          
+              </tbody>
+            </table>
+          </div>        
         {% endblock %}
       </main>
     </div>
