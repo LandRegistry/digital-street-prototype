@@ -16,13 +16,13 @@
       {% block sidebar %}
         {% include "v4/conveyancer/conveyit4u/includes/sidebar.html" %}
       {% endblock %}
-        <main role="main" class="ml-sm-auto col-lg-10">
+        <main role="main" class="ml-sm-auto col-md-10">
           {% block content %}
               <div class="row">
-              <div class="col-lg-7 m-auto ">
+                <div class="col-lg-8 m-auto pt-4">
                   <h1>Draft sales agreement</h1>
                   <form action="{{ nextURL }}" method="GET">
-                  <div class="conveyit4u-contract-box form-group">
+                    <div class="conveyit4u-contract-box form-group">
                       <div class="row pt-2">
                         <div class="col"> <span class="font-weight-bold">Seller:</span></div>
                         <div class="col-6">Lisa White</div>
@@ -33,7 +33,6 @@
                       </div>
                       <div class="row pt-2">
                         <div class="col-6"><span class="font-weight-bold">Freehold/leasehold:</span> </div>
-
                         <div class="col-6">Freehold
                         </div>
                       </div>
@@ -119,30 +118,30 @@
                       </div>
                       <div class="row">
                       <div class="col">
-                          <p class="font-weight-bold mb-0">Notices can be sent to:</p>
+                        <h4>Notices can be sent to:</h4>
                       </div>
                       </div>
                       <div class="row">
-                      <div class="col-6 mt-3 mt-lg-0">
-                          <span class="font-weight-bold">Buyer's conveyancer</span><br>
-                          <span class ="font-weight-bold">Name:</span> <br>
-                          Samuel Barnes<br>
-                          <span class = "font-weight-bold">Email:</span> <br>
+                      <div class="col-sm-6 mt-3 mt-lg-0">
+                        <h5>Buyer's conveyancer</h5>
+                        <span class="font-weight-bold">Name:</span> <br>
+                        Samuel Barnes<br>
+                        <span class="font-weight-bold">Email:</span> <br>
+                        <p style="word-wrap: break-word">
                           samuel.barnes@example.com
+                        </p>
                       </div>
-                      <div class="col-6 mt-3 mt-lg-0">
-                          <span class="font-weight-bold">Seller's conveyancer</span><br>
-                          <span class ="font-weight-bold">Name: </span> <br>
-                           Natasha Powell<br>
-                          <span class = "font-weight-bold">Email:</span> <br>
-                          natasha.powell@example.com
+                      <div class="col-sm-6 mt-3 mt-lg-0">
+                        <h5>Seller's conveyancer</h5>
+                        <span class ="font-weight-bold">Name: </span> <br>
+                        Natasha Powell<br>
+                        <span class="font-weight-bold">Email:</span> <br>
+                        natasha.powell@example.com
                       </div>
-                      </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col text-center">
-                      <button type="submit" class="btn conveyit4u-bg-button btn-lg">Submit and send to buyer's conveyancer</button>
                     </div>
+                  </div>
+                  <div class="text-center">
+                      <button type="submit" class="btn conveyit4u-bg-button btn-lg white-space-normal">Submit and send to buyer's conveyancer</button>
                   </div>
                 </form>
               </div>

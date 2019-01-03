@@ -72,24 +72,28 @@ html, body {
     background-color:#b8b7b7;
     text-align:center;
     color:#fff;
-    margin:20px auto
+    margin: 20px auto; 
+    padding: 20px;
 }
 
 .gringott-container{
     background-color:#e8f8fa;
     text-align:center;
     color:#fff;
-    margin:20px auto
+    margin: 20px auto;
+    padding: 20px;
 }
 
 .loans4homes-navbar,.loans4homes-button{
     background-color: #713e5a;
     color:#b8b7b7;
+    margin-bottom: 10px;    
 }
 
 .gringott-navbar,.gringott-button{
     background-color: #003663;
     color:#e8f8fa;
+    margin-bottom: 10px;
 }
 
 .loans4homes-content-text{
@@ -118,7 +122,7 @@ html, body {
   bottom: 0;
   left: 0;
   z-index: 100; /* Behind the navbar */
-  padding: 90px 0 0; /* Height of navbar */
+  padding: 70px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   background-color:#b8b7b7;
 }
@@ -129,7 +133,7 @@ html, body {
   bottom: 0;
   left: 0;
   z-index: 100; /* Behind the navbar */
-  padding: 90px 0 0; /* Height of navbar */
+  padding: 70px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   background-color:#e8f8fa;
 }

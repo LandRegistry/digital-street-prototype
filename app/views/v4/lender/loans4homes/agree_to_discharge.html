@@ -5,75 +5,45 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container-fluid mb-5">
+  <div class="container-fluid mt-3">
 		<div class="row">
       {% block sidebar %}
         {% include "v4/lender/loans4homes/includes/sidebar.html" %}
       {% endblock %}
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-0 mt-5">
+      <main role="main" class="ml-sm-auto col-md-10">
         {% block beforeContent %}
         {% endblock %}
 
         {% block content %}
           <form name="remove_charge_form" action="{{ nextURL }}">
             <div class="row">
-              <div class="col-lg-9 loans4homes-container loans4homes-content-text">
-                <div class="h3 font-weight-bold">Agree to discharge of charge and charge restriction</div>
-                <div class="row m-lg-2">
-                  <div class="col h5 small_font">
-                    As the seller's offer for their property satisfies their redemption figure you can consent to the
-                    discharge of your charge and charge restriction. By agreeing, you're allowing HMLR to remove these
-                    from the register on point of completion.
-                  </div>
-                </div>
-                <div class="row m-lg-2">
-                  <div class="col">
-                    <span class="h5 font-weight-bold"><strong>Address</strong></span><br>
-                  </div>
-                </div>
-                <div class="row m-lg-2">
-                  <div class="col">
-                    1 Digital Street,<br>
-                    Bristol, <br>
-                    BS2 8EN <br>
-                  </div>
-                </div>
+              <div class="col-lg-7 p-4 mt-5 loans4homes-container loans4homes-content-text">
+                <h3>Agree to discharge of charge and charge restriction</h3>
+                <p class="lead">            
+                  As the seller's offer for their property satisfies their redemption figure you can consent to the
+                  discharge of your charge and charge restriction. By agreeing, you're allowing HMLR to remove these
+                  from the register on point of completion.                
+                </p>
+                <h5>Address</h5>
+                <p>
+                  1 Digital Street,<br>
+                  Bristol, <br>
+                  BS2 8EN <br>                
+                </p>                
+                <h5>Charge</h5>
+                <p>
+                  <strong>Date: </strong> 10/03/2011 <br>
+                  <strong>Amount: </strong> £110,000
+                </p>
+                <h5>Restriction</h5>
+                <p>
+                  No disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the Charge dated 10/03/2011 in favour of Loans4Homes referred to in the Charges Register.
+                </p>                                
+                <button type="submit" class="btn loans4homes-button">
+                  Agree to discharge
+                </button>
                 <br>
-                <div class="row m-lg-2">
-                  <div class="col">
-                    <span class="h5 font-weight-bold"><strong>Charge</strong></span><br>
-                  </div>
-                </div>
-                <div class="row m-lg-2">
-                  <div class="col">
-                    <strong>Date: </strong> 10/03/2011 <br>
-                    <strong>Amount: </strong> £110,000
-                  </div>
-                </div>
-                <br>
-                <div class="row m-lg-2">
-                  <div class="col">
-                      <span class="h5 font-weight-bold"><strong>Restriction</strong></span><br>
-                  </div>
-                </div>
-                <div class="row m-lg-2">
-                  <div class="col">
-                    No disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the Charge dated 10/03/2011 in favour of Loans4Homes referred to in the Charges Register.
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col mb-3">
-                    <button type="submit" class="btn font-weight-bold loans4homes-button">
-                      Agree to discharge
-                    </button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col mb-3">
-                    <u><a href="#" class="colour-inherit">I don't agree with this discharge</a></u>
-                  </div>
-                </div>
+                <u><a href="#" class="colour-inherit">I don't agree with this discharge</a></u>                
               </div>
             </div>
           </form>

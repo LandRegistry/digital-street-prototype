@@ -1,22 +1,20 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark loans4homes-navbar">
-    <div class="container-fluid">
-      <a class="mb-0 h3" href="/">Loans4Homes</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
-              aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="mainNavbar">
-        {% if userName %}
-          <ul class="navbar-nav ml-auto  flex-column text-right">
-            <li class="nav-item">
-              You're logged in as:            
-              {{ userName }}
-            </li>
-            <li class="nav-item">
-              <u><a class="nav-link p-0" href="/">Logout</a></u>
-            </li>
-          </ul>
-        {% endif %}
-      </div>
-    </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark loans4homes-navbar">    
+  <a class="navbar-brand" href="/">Loans4Homes</a>
+  {% if userName %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ml-auto flex-column text-right">
+        <li class="nav-item">
+          You're logged in as:
+          {{ userName }}
+        </li>
+        <li class="nav-item">
+          <u><a class="nav-link p-0" href="/">Logout</a></u>
+        </li>
+      </ul>
+    {% endif %}
+  </div>
 </nav>
