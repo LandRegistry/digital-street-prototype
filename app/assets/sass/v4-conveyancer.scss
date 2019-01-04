@@ -66,6 +66,14 @@ html, body {
     background-color: #959595;
 }
 
+.sidebar-current {
+    background-color: #959595;
+}
+
+.text-underline-hover:hover {
+    text-decoration: underline;
+}
+
 /* selected link */
 #nav_sidebar  li > a:active {
     color: #959595;
@@ -231,6 +239,10 @@ ol.propertylaw-agreement>li:before {
     padding: 20px;
 }
 
+.white-space-normal {
+    white-space: normal
+}
+
 /* xs < 768 */
 @media screen and (max-width: 767px) {
     h1 {
@@ -324,8 +336,4 @@ ol.propertylaw-agreement>li:before {
     .small_font {
         font-size: 3vw;
     }
-}
-
-.white-space-normal {
-    white-space: normal
 }
