@@ -6,22 +6,31 @@
 
 {% block main %}
     <div class="container-fluid mb-5">
-        <div class="row">        
+        <div class="row">
             <main role="main" class="ml-sm-auto col">
                 {% block content %}
                 <div class="col-lg-7 propertylaw-container text-center">
                         <h1>Great news!<br>
-                        Your property transfer is complete.</h2>
+                        <h2>Your property transfer is complete.</h2>
+                        <br>
                         <p class="lead">
-                            HM Land Registry have updated their records and registered you as the new owner of 1 Digital Street.
+                            HM Land Registry have updated their records and registered you as the new owner of:
+                            <br>
+                              <strong>
+                                  1 Digital Street<br>
+                                  Bristol<br>
+                                  England<br>
+                                  BS2 8EN
+                              </strong>
+                            <br>
                         </p>
                         <p class="lead">
-                            You can now:<br>                            
+                            You can now:<br>
                             <ul class="list-style-position">
                                 <li>pick up the keys to your new home</li>
-                                <li><a href="#" class="colour-inherit"><u>view a copy of the updated register</u></a></li>
+                                <li><a href="#" class="colour-inherit"><u>view a copy of the updated register </u></a>
                             </ul>
-                        </p>                          
+                        </p>
                           <img src="/public/v4/images/confirmation_screen_buyer.png" class="img-responsive w-15">
                           <br>
                           <strong>Please remember to <a href="{{ nextURL }}" class="colour-inherit" style="text-decoration: underline">logout</a></strong>
