@@ -300,8 +300,9 @@ router.get('/propertylaw/login-3', function(req, res) {
 // Transfer complete confirmation page for buyer
 router.get('/propertylaw/transfer-complete', function(req, res) {
     const nextURL = '/'
+    const userName = "David Jones"
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/transfer_complete.html'),
-               { nextURL: nextURL })
+               { nextURL: nextURL, userName: userName })
 })
 
 /********
