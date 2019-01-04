@@ -6,29 +6,29 @@
 
 {% block main %}
     <div class="container-fluid mb-5">
-        <div class="row">            
+        <div class="row">
             <main role="main" class="ml-sm-auto col">
                 {% block beforeContent %}
                 {% endblock %}
 
                 {% block content %}
                 <div class="col-lg-7 conveyit4u-container text-center">
-                    <h1>Congratulations!</h1>                    
-                    You've signed your sales and transfer agreements                    
+                    <h1>Congratulations!</h1>
+                    You've signed your sales and transfer agreements
+                    <br> <br>
+                    <img src="/public/v4/images/confirmation_signed_agreements_seller.png" class="img-responsive w-15">
                     <br><br>
                     <strong>
                         1 Digital Street<br>
                         Bristol<br>
                         England<br>
-                        BS2 8EN                    
+                        BS2 8EN
                     </strong>
                     <br><br>
                     will be transferred on <br>
                     <strong>{{ completionDate }}</strong>
                     <br><br>
-
-                    We'll be in touch with any updates<br>
-                  
+                      <p> We'll be in touch with any updates <p>
                     <a href="{{ nextURL }}" class="colour-inherit"><u>You can now logout</u></a>
                     </div>
                 </div>
