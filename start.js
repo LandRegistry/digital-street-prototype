@@ -72,7 +72,6 @@ function runGulp () {
 
   process.env['FORCE_COLOR'] = 1
   var gulp = spawn('gulp')
-  // gulp.start('js')
   gulp.stdout.pipe(process.stdout)
   gulp.stderr.pipe(process.stderr)
   process.stdin.pipe(gulp.stdin)
