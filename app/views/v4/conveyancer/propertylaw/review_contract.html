@@ -10,122 +10,116 @@
       {% block sidebar %}
         {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
       {% endblock %}
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
-          {% block content %}
-            <div class="container-fluid p-0">
-                <div class="row">
-                <div class="col-lg-5 mx-auto">
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-lg-7 mx-auto">
+        <main role="main" class="ml-sm-auto col-md-10">
+          {% block content %}            
+            <div class="row">
+                <div class="col-lg-8 m-auto pt-4">
                     <h1>Review sales agreement</h1>
                     <div class="propertylaw-contract-box">
-                    <div class="row pt-2">
-                        <div class="col-6"> <span class="font-weight-bold">Date: </span> </div>
-                        <div class="col-6 lr-blue">{{ contractDate }}</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"> <span class="font-weight-bold">Seller: </span> </div>
-                        <div class="col-6">Lisa White</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"> <span class="font-weight-bold">Buyer: </span> </div>
-                        <div class="col-6">David Jones</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Freehold/leasehold: </span> </div>
-                        <div class="col-6">Freehold
+                        <div class="row pt-2">
+                            <div class="col-6"> <span class="font-weight-bold">Date: </span> </div>
+                            <div class="col-6 lr-blue">{{ contractDate }}</div>
                         </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Address: </span> </div>
-                        <div class="col-6">
-                          <p>
-                              1 Digital Street <br>
-                              Bristol <br>
-                              BS2 8EN
-                          </p>
+                        <div class="row pt-2">
+                            <div class="col-6"> <span class="font-weight-bold">Seller: </span> </div>
+                            <div class="col-6">Lisa White</div>
                         </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Title number: </span> </div>
-                        <div class="col-6">ZQV888860</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Specific incumbrances: </span> </div>
-                        <div class="col-6">None</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Title guarantee (full/limited): </span> </div>
-                        <div class="col-6">Full</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Completion Date:</span> </div>
-                        <div class="col-6">{{ completionDate }}</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Agreement rate: </span> </div>
-                        <div class="col-6">4.0% per annum</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Purchase price: </span> </div>
-                        <div class="col-6">£124,000.00</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Deposit: </span> </div>
-                        <div class="col-6">£12,400.00</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Contents price- if separate: </span> </div>
-                        <div class="col-6">N/A</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-6"><span class="font-weight-bold">Balance: </span></div>
-                        <div class="col-6">£111,600.00</div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col">
-                          <p class="text-center mb-0 tex-justify">The seller will sell and the buyer will buy the property for the
-                          purchase price.
-                          </p>
-                        <p class="col text-center m-2 m-lg-0"><a href="#"><span class="font-weight-bold"><u>Sales contract terms</u></span></a></p>
+                        <div class="row pt-2">
+                            <div class="col-6"> <span class="font-weight-bold">Buyer: </span> </div>
+                            <div class="col-6">David Jones</div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <p class="font-weight-bold mb-0">Notices can be sent to:</p>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Freehold/leasehold: </span> </div>
+                            <div class="col-6">Freehold
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <span class="font-weight-bold">Buyer's conveyancer</span><br>
-                        <span class="font-weight-bold">Name: </span> <br>
-                        Samuel Barnes<br>
-                        <span class="font-weight-bold">Email:</span> <br>
-                        samuel.barnes@example.com
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Address: </span> </div>
+                            <div class="col-6">
+                                <p>
+                                    1 Digital Street <br>
+                                    Bristol <br>
+                                    BS2 8EN
+                                </p>
+                            </div>
                         </div>
-                        <div class="col  mt-3 mt-lg-0">
-                        <span class="font-weight-bold">Seller's conveyancer</span><br>
-                        <span class="font-weight-bold">Name: </span> <br>
-                         Natasha Powell<br>
-                        <span class="font-weight-bold">Email:</span> <br>
-                         natasha.powell@example.com
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Title number: </span> </div>
+                            <div class="col-6">ZQV888860</div>
                         </div>
-                    </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Specific incumbrances: </span> </div>
+                            <div class="col-6">None</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Title guarantee (full/limited): </span> </div>
+                            <div class="col-6">Full</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Completion Date:</span> </div>
+                            <div class="col-6">{{ completionDate }}</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Agreement rate: </span> </div>
+                            <div class="col-6">4.0% per annum</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Purchase price: </span> </div>
+                            <div class="col-6">£124,000.00</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Deposit: </span> </div>
+                            <div class="col-6">£12,400.00</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Contents price- if separate: </span> </div>
+                            <div class="col-6">N/A</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6"><span class="font-weight-bold">Balance: </span></div>
+                            <div class="col-6">£111,600.00</div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col">
+                                <p class="text-center mb-0 tex-justify">The seller will sell and the buyer will buy the property for the
+                                purchase price.
+                                </p>
+                            <p class="col text-center m-2 m-lg-0"><a href="#"><span class="font-weight-bold"><u>Sales contract terms</u></span></a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <p class="font-weight-bold mb-0">Notices can be sent to:</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="font-weight-bold">Buyer's conveyancer</span><br>
+                                <span class="font-weight-bold">Name: </span> <br>
+                                Samuel Barnes<br>
+                                <span class="font-weight-bold">Email:</span> <br>
+                                samuel.barnes@example.com
+                            </div>
+                            <div class="col  mt-3 mt-lg-0">
+                                <span class="font-weight-bold">Seller's conveyancer</span><br>
+                                <span class="font-weight-bold">Name: </span> <br>
+                                    Natasha Powell<br>
+                                <span class="font-weight-bold">Email:</span> <br>
+                                    natasha.powell@example.com
+                            </div>
+                        </div>
                     </div>
                     <div class="row mt-3">
-                    <div class="col text-center">
-                        <a href="{{ nextURL }}" id="submit_button" class="btn propertylaw-bg-button btn-blue btn-lg">
-                            Accept sales agreement and notify seller
-                        </a>
-                        <br>
-                        <a href="#" class="font-weight-bold"><u>Negotiate</u></a>
+                        <div class="col text-center">
+                            <a href="{{ nextURL }}" id="submit_button" class="btn propertylaw-bg-button btn-blue btn-lg white-space-normal">
+                                Accept sales agreement
+                            </a>
+                            <br>
+                            <a href="#" class="font-weight-bold"><u>Negotiate</u></a>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
+            </div>            
           {% endblock %}
         </main>
       </div>

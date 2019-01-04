@@ -6,25 +6,22 @@
 
 {% block main %}
     <div class="container-fluid mb-5">
-        <div class="row">
-        {% block sidebar %}
-            {% include "v4/conveyancer/propertylaw/includes/sidebar.html" %}
-        {% endblock %}
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-0">
+        <div class="row">        
+            <main role="main" class="ml-sm-auto col">
                 {% block content %}
-                <div class="col-lg-7  propertylaw-container text-center p-3">
-                        <h1 class="font-weight-bold">Great news!</h1>
-                        <div class="h3">
-                          <strong>
-                            Your property transfer is complete.<br>
-                            HM Land Registry have updated their records and registered you as the new owner of<br>
-                            1 Digital Street<br><br>
-                            You can now:<br>
-                          </strong>
-                          <ul class="list-style-position-inside">
-                            <li>pick up the keys to your new home</li>
-                            <li><a href="#" class="colour-inherit"><u>view a copy of the updated register</u></a></li>
-                          </ul>
+                <div class="col-lg-7 propertylaw-container text-center">
+                        <h1>Great news!<br>
+                        Your property transfer is complete.</h2>
+                        <p class="lead">
+                            HM Land Registry have updated their records and registered you as the new owner of 1 Digital Street.
+                        </p>
+                        <p class="lead">
+                            You can now:<br>                            
+                            <ul class="list-style-position">
+                                <li>pick up the keys to your new home</li>
+                                <li><a href="#" class="colour-inherit"><u>view a copy of the updated register</u></a></li>
+                            </ul>
+                        </p>                          
                           <img src="/public/v4/images/confirmation_screen_buyer.png" class="img-responsive w-15">
                           <br>
                           <strong>Please remember to <a href="{{ nextURL }}" class="colour-inherit" style="text-decoration: underline">logout</a></strong>
