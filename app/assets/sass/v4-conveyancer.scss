@@ -74,6 +74,28 @@ html, body {
     text-decoration: underline;
 }
 
+.conveyit4u-navbar-toggle {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #8AC0AE;
+    border-color: transparent;
+}
+
+.propertylaw-navbar-toggle {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #1DAFEC;
+    border-color: transparent;
+}
+
 /* selected link */
 #nav_sidebar  li > a:active {
     color: #959595;
@@ -118,7 +140,7 @@ html, body {
 }
 
 .btn-blue {
-    background-color: #dafec;
+    background-color: #1dafec;
     color: white;
 }
 
@@ -328,7 +350,11 @@ ol.propertylaw-agreement>li:before {
     }
 
     .list-style-position {
-        list-style-position: inside
+        list-style-position: inside;
+    }
+
+    .conveyit4u-navbar-toggle, .propertylaw-navbar-toggle {
+        display: none;
     }
 }
 

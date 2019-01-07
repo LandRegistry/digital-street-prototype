@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark loans4homes-navbar">    
   <a class="navbar-brand" href="/">Loans4Homes</a>
-  {% if userName %}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  {% if firstName %}
+    <button class="loans4homes-navbar-toggle" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span>{{firstName[0]}}{{lastName[0]}}</span>
     </button>
     
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ml-auto flex-column text-right">
         <li class="nav-item">
           You're logged in as:
-          {{ userName }}
+          {{ firstName }} {{ lastName }}
         </li>
         <li class="nav-item">
           <u><a class="nav-link p-0" href="/">Logout</a></u>

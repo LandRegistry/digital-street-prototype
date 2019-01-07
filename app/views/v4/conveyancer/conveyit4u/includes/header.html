@@ -1,15 +1,15 @@
-<nav class="navbar shadow navbar-dark navbar-expand-lg fixed-top lr-bg-green flex-md-nowrap p-lg-0">
+<nav class="navbar shadow navbar-dark navbar-expand-md fixed-top lr-bg-green flex-md-nowrap p-lg-0">
   <div class="container-fluid">
     <a class="navbar-brand mb-0 h1" href="/">Conveyit4u</a>
-    {% if userName %}
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    {% if firstName %}
+      <button class="conveyit4u-navbar-toggle" type="button" data-toggle="collapse" data-target="#main_navbar" aria-controls="main_navbar" aria-expanded="false" aria-label="Toggle navigation">        
+        <span>{{firstName[0]}}{{lastName[0]}}</span>
       </button>
       <div class="navbar-collapse collapse  w-100 order-3 dual-collapse2" id="main_navbar">
         <ul class="navbar-nav ml-auto  flex-column" id="header_nav_item">
           <li class="nav-item">
             You're logged in as:
-            {{ userName }}
+            {{ firstName }} {{ lastName }}
           </li>
           <li class="nav-item ml-lg-auto">
             <strong><a class="nav-link p-0 text-underline-hover" href="/">Logout</a></strong>

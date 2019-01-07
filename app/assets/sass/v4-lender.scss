@@ -45,33 +45,6 @@ html, body {
     padding-top: 48px; /* Space for fixed navbar */
 }
 
-/* xs < 768 */
-@media screen and (max-width: 767px) {
-    h1 {
-        font-size: 7.5vw;
-    }
-
-    .h3 {
-        font-size: 5.5vw;
-    }
-}
-
-/* sm , md and lg*/
-@media screen and (min-width: 768px) {
-    h1 {
-        font-size: 3vw;
-    }
-    .h3 {
-        font-size: 2.25vw;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .small_font {
-        font-size: 3vw;
-    }
-}
-
 .loans4homes-container{
     background-color:#b8b7b7;
     text-align:center;
@@ -160,4 +133,57 @@ html, body {
   min-height: 100vh; /* These two lines are counted as one        */
   display: flex;
   align-items: center;
+}
+
+.loans4homes-navbar-toggle {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #713e5a;
+    border-color: transparent;
+}
+
+.gringott-navbar-toggle {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #003663;
+    border-color: transparent;
+}
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    .h3 {
+        font-size: 5.5vw;
+    }
+}
+
+/* sm , md and lg*/
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 3vw;
+    }
+    .h3 {
+        font-size: 2.25vw;
+    }
+
+    .loans4homes-navbar-toggle, .gringott-navbar-toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .small_font {
+        font-size: 3vw;
+    }
 }
