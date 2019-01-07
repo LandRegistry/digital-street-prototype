@@ -256,9 +256,10 @@ router.get('/propertylaw/confirm-agreement', function(req, res) {
 router.get('/propertylaw/agreement-signed', function(req, res) {
     // Set completion date 3 weeks in the future
     const completionDate = moment().add(21, 'days').format('Do MMMM YYYY')
+    const userName = "David Jones"
     const nextURL = '/v4/conveyit4u/notification-transfer-complete'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/agreement_signed.html'),
-               { nextURL: nextURL, completionDate: completionDate })
+               { nextURL: nextURL, completionDate: completionDate, userName: userName })
 })
 
 // Seller notification for completion day
