@@ -202,7 +202,7 @@ ol.propertylaw-agreement>li:before {
 .agreement-checkboxes {
     width: 70%;    
     margin: auto;
-    text-align: left;
+    text-align: center;
 }
 
 .conveyit4u-contract-box{
@@ -247,10 +247,6 @@ ol.propertylaw-agreement>li:before {
   text-decoration: none !important
  }
 
-.w-15{
-  max-width:15%
-}
-
 .demo-only-section {
     background: repeating-linear-gradient(
         -55deg,
@@ -267,15 +263,19 @@ ol.propertylaw-agreement>li:before {
     white-space: normal
 }
 
+.confirmation-image{
+    max-width: 40%
+}
+
 /* xs < 768 */
 @media screen and (max-width: 767px) {
-    h1 {
-        font-size: 7.5vw;
-    }
+    // h1 {
+    //     font-size: 7.5vw;
+    // }
 
-    .h3 {
-        font-size: 5.5vw;
-    }
+    // .h3 {
+    //     font-size: 5.5vw;
+    // }
 
     input[type=checkbox]
     {
@@ -335,7 +335,8 @@ ol.propertylaw-agreement>li:before {
         background-color:#c9d1cd;
         text-align:center;
         color:#6e6969;
-        margin:20px auto;
+        margin:20px auto;        
+        padding: 20px 10%;
     }
     
     .conveyit4u-container{
@@ -343,6 +344,7 @@ ol.propertylaw-agreement>li:before {
         text-align:center;
         color:#fff;
         margin: 20px auto;
+        padding: 20px 10%;
     }
 
     .agreement-checkboxes {
@@ -357,6 +359,10 @@ ol.propertylaw-agreement>li:before {
 
     .conveyit4u-navbar-toggle, .propertylaw-navbar-toggle {
         display: none;
+    }
+
+    .confirmation-image{
+        max-width:15%
     }
 }
 

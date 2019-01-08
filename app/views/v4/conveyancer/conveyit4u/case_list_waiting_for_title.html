@@ -17,56 +17,77 @@
         {% block content %}          
           <div class="m-auto pt-3">
             <h1>Cases</h1>
-            <table class="table table-hover" id="tbl_case_list">
-              <tbody>          
-                <thead>
+            <hr>
+            <h2>Selling</h2>
+            <div class="table-responsive">
+              <table class="table table-hover" id="tbl_case_list">
+                <tbody>          
+                  <thead>
+                    <tr>
+                      <th scope="col">Client</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Title number</th>
+                      <th scope="col">Action required</th>
+                    </tr>
+                  </thead>            
                   <tr>
-                    <th scope="col">Client</th>
-                    <th scope="col">Case number</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Case type</th>
-                    <th scope="col">Title number</th>
-                    <th scope="col">Action required</th>
+                    <td scope="row">Lisa White</td>
+                    <td>
+                      1 Digital Street,<br>
+                      Bristol,<br>
+                      BS2 8EN
+                    </td>
+                    <td></td>
+                    <td><a href="{{ nextURL }}">Waiting for title information</a></td>                
                   </tr>
-                </thead>            
-                <tr>
-                  <td scope="row">Lisa White</td>
-                  <td>ABCD123</td>
-                  <td>
-                    1 Digital Street,<br>
-                    Bristol,<br>
-                    BS2 8EN
-                  </td>
-                  <td>Selling</td>
-                  <td></td>
-                  <td><a href="{{ nextURL }}">Waiting for title information</a></td>                
-                </tr>
-                <tr>
-                  <td scope="row">Jim Smith</td>
-                  <td>KSYB294</td>
-                  <td>
-                    30 Digital Street,<br>
-                    Bristol,<br>
-                    BS2 8EN
-                  </td>
-                  <td>Selling</td>
-                  <td></td>
-                  <td>Waiting for title information</td>
-                </tr>
-                <tr>
-                  <td scope="row">Martin Keats</td>
-                  <td>MAYN467</td>
-                  <td>
-                    31 Digital Street,<br>
-                    Bristol,<br>
-                    BS2 8EN
-                  </td>
-                  <td>Selling</td>
-                  <td></td>
-                  <td>Waiting for title information</td>
-                </tr>
-              </tbody>
-            </table>
+                  <tr>
+                    <td scope="row">Jim Smith</td>
+                    <td>
+                      30 Digital Street,<br>
+                      Bristol,<br>
+                      BS2 8EN
+                    </td>
+                    <td></td>
+                    <td>Waiting for title information</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Martin Keats</td>
+                    <td>
+                      31 Digital Street,<br>
+                      Bristol,<br>
+                      BS2 8EN
+                    </td>
+                    <td></td>
+                    <td>Waiting for title information</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h2>Buying</h2>
+            <div class="table-responsive">
+              <table class="table table-hover" id="tbl_case_list">
+                <tbody>
+                  <thead>
+                    <tr>
+                      <th scope="col">Client</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Title number</th>
+                      <th scope="col">Action required</th>
+                    </tr>
+                  </thead>                  
+                  <tr>
+                    <td scope="row">Sarah Wilkes</td>                      
+                    <td>
+                      12 Digital Street,<br>
+                      Bristol,<br>
+                      BS2 8EN
+                    </td>                      
+                    <td></td>
+                    <td>Waiting for title information</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>          
         {% endblock %}
       </main>

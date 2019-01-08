@@ -17,16 +17,17 @@
         {% block content %}          
           <div class="m-auto pt-4 loans4homes-content-text">
             <h1>Alerts</h1>
-            <table class="table table-hover" id="tbl_list">
-              <tbody>        
-                <thead>
-                <tr>
-                  <th scope="col">Client</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Title number</th>
-                  <th scope="col">Action required</th>
-                </tr>
-                </thead>                      
+            <div class="table-responsive">
+              <table class="table table-hover" id="tbl_list">
+                <tbody>        
+                  <thead>
+                    <tr>
+                      <th scope="col">Client</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Title number</th>
+                      <th scope="col">Action required</th>
+                    </tr>
+                  </thead>                      
                   <tr>
                     <td scope="row">Lisa White</td>
                     <td>
@@ -40,10 +41,11 @@
                         Agree to discharge mortgage
                       </a>
                     </td>
-                </tr>          
-              </tbody>
-            </table>
-          </div>        
+                  </tr>          
+                </tbody>
+              </table>
+            </div>        
+          </div>
         {% endblock %}
       </main>
     </div>

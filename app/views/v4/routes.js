@@ -105,13 +105,14 @@ router.get('/loans4homes/charge-list-agree-to-discharge', function(req, res) {
 
 // Lender 'agree to discharge
 router.get('/loans4homes/agree-to-discharge', function(req, res) {
-    const nextURL = '/v4/loans4homes/charge-list-discharge-approved'
+    const nextURL = '/v4/conveyit4u/login-draft-sales'
     const firstName = 'Terry'
     const lastName = 'Jenkins'
     res.render(path.resolve(__dirname, './lender/loans4homes/agree_to_discharge.html'),
     { nextURL: nextURL, firstName: firstName, lastName: lastName  })
 })
 
+/*  NO LONGER USED
 // Lender charge list with action 'Discharge approved'
 router.get('/loans4homes/charge-list-discharge-approved', function(req, res) {    
     const nextURL = '/v4/conveyit4u/case-list-draft-sales'
@@ -119,8 +120,14 @@ router.get('/loans4homes/charge-list-discharge-approved', function(req, res) {
     const lastName = 'Jenkins'
     res.render(path.resolve(__dirname, './lender/loans4homes/charge_list_discharge_approved.html'),
                { nextURL: nextURL, firstName: firstName, lastName: lastName  })
-})
+}) */
 
+// Seller's conveyancer login to draft sales agreement
+router.get('/conveyit4u/login-draft-sales', function(req, res) {
+    const nextURL = '/v4/conveyit4u/case-list-draft-sales'    
+    res.render(path.resolve(__dirname, './conveyancer/conveyit4u/login.html'),
+    { nextURL: nextURL })
+})
 
 // Case list with action 'Draft sales agreement'
 router.get('/conveyit4u/case-list-draft-sales', function(req, res) {
