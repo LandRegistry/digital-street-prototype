@@ -174,7 +174,7 @@ router.get('/propertylaw/review-sales-agreement', function(req, res) {
     const firstName = 'Samuel'
     const lastName = 'Barnes'
     res.render(path.resolve(__dirname, './conveyancer/propertylaw/review_contract.html'),
-               { nextURL: nextURL, completionDate: completionDate, contractDate: contractDate, userName: userName })
+               { nextURL: nextURL, completionDate: completionDate, contractDate: contractDate })
 })
 
 // Seller's notification to sign the sales and transfer agreements
@@ -297,8 +297,9 @@ router.get('/conveyit4u/login-3', function(req, res) {
 
 // Transfer complete confirmation page for seller
 router.get('/conveyit4u/transfer-complete', function(req, res) {
-    const nextURL = '/v4/propertylaw/notification-transfer-complete'
-    const userName = "Lisa White"
+    const nextURL = '/v4/propertylaw/notification-transfer-complete'    
+    const firstName = "Lisa"
+    const lastName = "White"
     res.render(path.resolve(__dirname, './conveyancer/conveyit4u/transfer_complete.html'),
                { nextURL: nextURL, firstName: firstName, lastName: lastName  })
 })
