@@ -17,67 +17,78 @@
         {% block content %}          
           <div class="m-auto pt-4">
             <h1>Cases</h1>
-            <hr>
-            <h2>Selling</h2>
-            <div class="table-responsive">
-              <table class="table table-hover" id="tbl_case_list">
-                <tbody>
-                  <thead>
-                    <tr>
-                      <th scope="col">Client</th>
-                      <th scope="col">Address</th>
-                      <th scope="col">Title number</th>
-                      <th scope="col">Action required</th>
-                    </tr>
-                  </thead>                  
-                  <tr>
-                    <td scope="row">Holly Windsor</td>
-                    <td>
-                      32 Digital Street,<br>
-                      Bristol,<br>
-                      BS2 8EN
-                    </td>
-                    <td></td>
-                    <td>Waiting for title information</td>
-                  </tr>                  
-                </tbody>
-              </table>
-            </div>
-            <h2>Buying</h2>
-            <div class="table-responsive">
-                <table class="table table-hover" id="tbl_case_list">
-                  <tbody>
-                    <thead>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" id="selling-tab" data-toggle="tab" href="#selling" role="tab" aria-controls="selling" aria-selected="true">Selling</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="buying-tab" data-toggle="tab" href="#buying" role="tab" aria-controls="buying" aria-selected="false">Buying</a>
+              </li>                
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade" id="selling" role="tabpanel" aria-labelledby="selling-tab">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="tbl_case_list">
+                    <tbody>
+                      <thead>
+                        <tr>
+                          <th scope="col">Client</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Title number</th>
+                          <th scope="col">Action required</th>
+                        </tr>
+                      </thead>                  
                       <tr>
-                        <th scope="col">Client</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Title number</th>
-                        <th scope="col">Action required</th>
-                      </tr>
-                    </thead>
-                    <tr>
-                      <td scope="row">David Jones</td>
-                      <td>
-                        1 Digital Street,<br>
-                        Bristol,<br>
-                        BS2 8EN
-                      </td>                      
-                      <td>ZQV888860</td>
-                      <td><a href="{{ nextURL }}">Review sales agreement</a></td>
-                    </tr>                    
-                    <tr>
-                      <td scope="row">Martin Keats</td>
-                      <td>
-                        11 Digital Street,<br>
-                        Bristol,<br>
-                        BS2 8EN
-                      </td>                      
-                      <td>RTV237232</td>
-                      <td>Waiting for draft of agreement</td>
-                    </tr>
-                  </tbody>
-                </table>
+                        <td scope="row">Holly Windsor</td>
+                        <td>
+                          32 Digital Street,<br>
+                          Bristol,<br>
+                          BS2 8EN
+                        </td>
+                        <td></td>
+                        <td>Waiting for title information</td>
+                      </tr>                  
+                    </tbody>
+                  </table>
+                </div>
               </div>
+              <div class="tab-pane fade show active" id="buying" role="tabpanel" aria-labelledby="buying-tab">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="tbl_case_list">
+                      <tbody>
+                        <thead>
+                          <tr>
+                            <th scope="col">Client</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Title number</th>
+                            <th scope="col">Action required</th>
+                          </tr>
+                        </thead>
+                        <tr>
+                          <td scope="row">David Jones</td>
+                          <td>
+                            1 Digital Street,<br>
+                            Bristol,<br>
+                            BS2 8EN
+                          </td>                      
+                          <td>ZQV888860</td>
+                          <td><a href="{{ nextURL }}">Review sales agreement</a></td>
+                        </tr>                    
+                        <tr>
+                          <td scope="row">Martin Keats</td>
+                          <td>
+                            11 Digital Street,<br>
+                            Bristol,<br>
+                            BS2 8EN
+                          </td>                      
+                          <td>RTV237232</td>
+                          <td>Waiting for draft of agreement</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
           </div>
         {% endblock %}
       </main>
