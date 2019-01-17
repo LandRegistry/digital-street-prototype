@@ -14,9 +14,10 @@
         {% block beforeContent %}
         {% endblock %}
 
-        {% block content %}          
+        {% block content %}
           <div class="m-auto pt-4 loans4homes-content-text">
             <h1>Alerts</h1>
+<<<<<<< HEAD
             <div class="table-responsive">            
               <table class="table table-hover" id="tbl_list">
                 <tbody>        
@@ -41,10 +42,33 @@
                 </tbody>
               </table>
             </div>
+=======
+            <table class="table table-hover" id="tbl_list">
+              <tbody>
+                <thead>
+                  <tr>
+                    <th scope="col">Client</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Title number</th>
+                    <th scope="col">Action required</th>
+                  </tr>
+                </thead>
+                  <tr>
+                    <td scope="row">Lisa White</td>
+                    <td>
+                      1 Digital Street,<br>
+                      Bristol,<br>
+                      BS2 8EN
+                    </td>
+                    <td>ZQV888860</td>
+                    <td><a href="{{ nextURL }}">Discharge approved</a></td>
+                </tr>
+              </tbody>
+            </table>
+>>>>>>> 8e2614de13518de400f12bfdc1ab2245281a78e3
           </div>
         {% endblock %}
       </main>
     </div>
   </div>
 {% endblock %}
-
