@@ -93,7 +93,7 @@
                         1 Digital Street<br>Bristol<br>BS2 8EN
                         <hr>
                     </h1>
-        
+
                     <p class="govuk-body">
                     {% if sold %}
                         This register was last changed on <strong>17 August 2018</strong> at <strong>15:31:54</strong><br>
@@ -120,7 +120,7 @@
     </div>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            
+
             <p class="govuk-body">
                 {% if role %}
                     {% if ['owner', 'seller'].includes(role) %}
@@ -172,7 +172,7 @@
                 {% if notification == 'valuation' %}
                     <div class="govuk-inset-text">
                         <table class="govuk-table">
-                            <caption class="govuk-table__caption">Current valuation</caption> 
+                            <caption class="govuk-table__caption">Current valuation</caption>
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row">
                                     <td class="govuk-table__cell">{{ valuation.price }}</td>
@@ -184,7 +184,7 @@
                     </div>
                 {% else %}
                     <table class="govuk-table">
-                        <caption class="govuk-table__caption">Current valuation</caption> 
+                        <caption class="govuk-table__caption">Current valuation</caption>
                         <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell">{{ valuation.price }}</td>
@@ -195,11 +195,11 @@
                     </table>
                 {% endif %}
             {% endif %}
-                  
+
             <table class="govuk-table">
-                <caption class="govuk-table__caption">Price history</caption>                
+                <caption class="govuk-table__caption">Price history</caption>
                 <tbody class="govuk-table__body">
-                    {% if sold %} 
+                    {% if sold %}
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell">£250,000</td>
                         <td class="govuk-table__cell">Sold</td>
@@ -223,7 +223,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <h2 class="govuk-heading-l">Things that affect this property</h2>
             <p class="govuk-body"><strong>This property:</strong></p>
             <ul class="govuk-list govuk-list--bullet">
@@ -231,12 +231,12 @@
                 <li>is subject to hedgerow notices <a class="govuk-link" href="#">(source)</a></li>
             </ul>
             <p class="govuk-body"><strong>You can't:</strong></p>
-            <ul class="govuk-list govuk-list--bullet">    
+            <ul class="govuk-list govuk-list--bullet">
                 <li>mine this land <a class="govuk-link" href="#">(source)</a></li>
                 <li>build a factory <a class="govuk-link" href="#">(source)</a></li>
                 <li>use this land for a business <a class="govuk-link" href="#">(source)</a></li>
                 <li>build on the south side of the property <a class="govuk-link" href="#">(source)</a></li>
-            </ul>                
+            </ul>
             <p class="govuk-body"><strong>You can:</strong></p>
             <ul class="govuk-list govuk-list--bullet">
                 <li>use the path at the end of 2 Digital Street to access your property <a class="govuk-link" href="#">(source)</a></li>
@@ -247,7 +247,7 @@
                 <li>owners of 2 Digital Street can use the path at the back of their land but must contribute to its maintenance costs <a class="govuk-link" href="#">(source)</a></li>
                 <li><a href="#">Southwest Water</a> can access your garden to access the drainage system at the end of your property <a class="govuk-link" href="#">(source)</a></li>
             </ul>
-            </ul>            
+            </ul>
             <!-- {% if not role %}
                 {{ govukButton({
                     text: "I own this property",
@@ -260,12 +260,12 @@
                         href: "seller-pre-contract-enquiries1"
                     }) }}
                 {% elseif role == 'seller' %}
-                    {% if offer_accepted %} 
+                    {% if offer_accepted %}
                         {{ govukButton({
                             text: "Review sales contract",
                             href: "seller-agree-to-sell"
                         }) }}
-                    {% elseif notification == 'offer' %} 
+                    {% elseif notification == 'offer' %}
                         {{ govukButton({
                             text: "Respond to offer",
                             href: "seller-review-offer"
